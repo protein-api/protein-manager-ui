@@ -1,6 +1,8 @@
 <div class="search-bar">
-    <form class="search-form">
-        <md-icon class="icon-search">search</md-icon>
-        <input #searchInput type="text" (keyup.enter)="enter(searchInput.value)" >
-    </form>
+    <div class="search-form">
+        <input #searchInput type="text"  >
+        <button md-icon-button color="accent" (click)="enter(searchInput.value)" type="button">
+            <md-icon class="md-24" aria-label="Example icon-button with a heart icon">search</md-icon>
+        </button>
+    </div>
 </div>

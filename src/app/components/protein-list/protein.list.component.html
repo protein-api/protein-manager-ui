@@ -1,0 +1,62 @@
+
+    <!--<md-tab label="LIST">-->
+        <!--<div >-->
+            <!--<md-table #table [dataSource]="dataSource">-->
+
+                <!--&lt;!&ndash;- Note that these columns can be defined in any order.-->
+                      <!--The actual rendered columns are set as a property on the row definition" &ndash;&gt;-->
+
+                <!--&lt;!&ndash; Position Column &ndash;&gt;-->
+                <!--<ng-container mdColumnDef="nombre">-->
+                    <!--<md-header-cell *mdHeaderCellDef> nombre </md-header-cell>-->
+                    <!--<md-cell *mdCellDef="let element"> {{element.nombre}} </md-cell>-->
+                <!--</ng-container>-->
+
+                <!--&lt;!&ndash; Name Column &ndash;&gt;-->
+                <!--<ng-container mdColumnDef="codigoUniProt">-->
+                    <!--<md-header-cell *mdHeaderCellDef> codigoUniProt </md-header-cell>-->
+                    <!--<md-cell *mdCellDef="let element"> {{element.codigoUniProt}} </md-cell>-->
+                <!--</ng-container>-->
+
+                <!--&lt;!&ndash; Weight Column &ndash;&gt;-->
+                <!--<ng-container mdColumnDef="organismo">-->
+                    <!--<md-header-cell *mdHeaderCellDef> organismo </md-header-cell>-->
+                    <!--<md-cell *mdCellDef="let element"> {{element.organismo}} </md-cell>-->
+                <!--</ng-container>-->
+
+                <!--&lt;!&ndash; Color Column &ndash;&gt;-->
+                <!--<ng-container mdColumnDef="familia">-->
+                    <!--<md-header-cell *mdHeaderCellDef> familia </md-header-cell>-->
+                    <!--<md-cell *mdCellDef="let element"> {{element.familia}} </md-cell>-->
+                <!--</ng-container>-->
+
+                <!--<md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>-->
+                <!--<md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>-->
+            <!--</md-table>-->
+        <!--</div>-->
+    <!--</md-tab>-->
+
+                <md-card *ngFor="let protein of list" class="sampleClass">
+                    <md-card-header color = "pimary">
+                        <md-card-title>
+                            {{protein.nombre}}
+                        </md-card-title>
+                        <md-card-subtitle>
+                            FAMILY {{protein.familia}}
+                        </md-card-subtitle>
+                    </md-card-header>
+                    <md-card-content>
+                        <p>
+                           ORGANISM: {{protein.organismo}}
+                        </p>
+                    </md-card-content>
+                    <md-card-actions>
+                        <button md-icon-button color="primary" >
+                            <md-icon class="md-24" aria-label="Example icon-button with a heart icon">search</md-icon>
+                        </button>
+                    </md-card-actions>
+
+                </md-card>
+
+
+

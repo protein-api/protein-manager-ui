@@ -1,0 +1,37 @@
+<md-expansion-panel>
+    <md-expansion-panel-header>
+        <md-panel-title>
+            General Information
+        </md-panel-title>
+        <md-panel-description>
+
+        </md-panel-description>
+    </md-expansion-panel-header>
+        <md-input-container class="full-width">
+            <input mdInput placeholder="Nombre"  required [(ngModel)] = model.nombre name="nombre" [disabled]="!isEdit">
+        </md-input-container>
+        <md-input-container class="full-width">
+            <input mdInput placeholder="Organismo"  required [(ngModel)] = model.organismo name="organismo" [disabled]="!isEdit">
+        </md-input-container>
+        <md-input-container class="full-width">
+            <input mdInput placeholder="Familia"  required [(ngModel)] = model.familia name="familia" [disabled]="!isEdit">
+        </md-input-container>
+        <md-input-container class="full-width">
+            <textarea mdInput placeholder="Secuencia"  required [(ngModel)] = model.secuencia name="secuenca" [disabled]="!isEdit"></textarea>
+        </md-input-container>
+        <md-input-container class="full-width">
+            <input mdInput placeholder="Codigo UniProt"  required [(ngModel)] = model.codigoUniProt name="codigoUniProt" [disabled]="!isEdit">
+
+        </md-input-container>
+        <md-input-container class="full-width">
+            <input mdInput placeholder="Codio Keg"  required [(ngModel)] = model.codigoKegg name="codigoKegg" [disabled]="!isEdit">
+        </md-input-container>
+
+
+
+                <br />
+
+    </md-expansion-panel>
+
+
+

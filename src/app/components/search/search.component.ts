@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {HeaderBarService} from "../shared/services/header-bar.service";
+import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,7 +10,7 @@ import {Router} from "@angular/router";
 export class SearchComponent implements OnInit{
 
 
-    constructor(private headerBarService:HeaderBarService, private router:Router){
+    constructor( private router:Router){
 
     }
 
@@ -21,7 +20,7 @@ export class SearchComponent implements OnInit{
     }
 
     backClick(){
-        this.headerBarService.changeShowSearch();
+
     }
 
     enter(value:string){
