@@ -15,8 +15,31 @@
 }
 .sampleClass{
   width: 20%;
-  margin: 10px;
+  margin: 12px;
   display: inline-block;
+  padding: 0px;
+
+}
+.card-toolbar{
+  padding: 0px;
+}
+
+.list-header{
+  width: inherit;
+}
+
+.header-content{
+  width: 70%;
+  h2{
+    display: block;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
+  label{
+    display: block;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -26,3 +49,41 @@
   }
 
 }
+
+.card-actions{
+  float: right;
+}
+.card-content{
+  display: flex !important;
+  flex-flow: column;
+}
+
+.list{
+  display: inline-flex;
+  flex: 1;
+  padding: 16px 0;
+  text-overflow: ellipsis;
+
+}
+
+.icon-list{
+  width: 32px;
+  height: 32px;
+}
+
+
+.icon-elements-view {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  border-radius: 50%;
+  box-sizing: content-box;
+
+}
+
+.list-item-header{
+  color: white;
+}
+

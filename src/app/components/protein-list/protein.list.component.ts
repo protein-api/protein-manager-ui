@@ -7,8 +7,10 @@ import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map'
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ProteinDataService} from "../../service/protein.data.srv";
+import {MdIconRegistry} from "@angular/material";
+import {DomSanitizer} from "@angular/platform-browser";
 
 /**
  * @title Basic table
@@ -25,7 +27,10 @@ export class ProteinListComponent implements OnInit{
     private sub;
     private searchText:string;
 
-    constructor(private route:ActivatedRoute,private proteinDataService:ProteinDataService){
+    constructor(private route:ActivatedRoute,private proteinDataService:ProteinDataService,private router:Router,mdIconRegistry: MdIconRegistry, sanitizer: DomSanitizer){
+        mdIconRegistry
+            .addSvgIcon('protein',
+                sanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/protein.svg'))
 
     }
 
@@ -51,6 +56,10 @@ export class ProteinListComponent implements OnInit{
     ngOnDestroy(){
         this.sub.unsubscribe();
     }
+
+    showProtein(id){
+        this.router.navigate(['/protein/'+ id]);
+    }
 }
 
 export interface Element {
@@ -61,6 +70,7 @@ export interface Element {
 }
 
 export interface  Protein {
+    id:number;
     nombre: string;
     codigoUniProt: string;
     organismo: string;

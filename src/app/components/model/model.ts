@@ -13,6 +13,7 @@ export class Protein{
     public organismo:string;
     public familia:string;
     public codigoKegg:string;
+    public reacciones =[];
 
 }
 

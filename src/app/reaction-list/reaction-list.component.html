@@ -1,0 +1,52 @@
+<div  *ngFor="let reaction of list">
+  <md-card *ngFor="let cinetica of reaction.cineticas"  class="sampleClass">
+
+      <md-toolbar class="card-toolbar" color="primary">
+        <md-list>
+          <md-list-item class="list list-item-header">
+            <md-icon svgIcon="reaccion" class="icon-elements-view" ></md-icon>
+            <div >
+              <h2>{{reaction.nombre}}</h2>
+              <label>TYPE {{reaction.tipo}}</label>
+            </div>
+          </md-list-item>
+        </md-list>
+
+
+      </md-toolbar>
+    <md-divider></md-divider>
+      <md-list>
+        <md-list-item class="list list-item-card">
+          <md-icon svgIcon="cinetica" class="icon-elements-view icon-list" ></md-icon>
+          <div >
+            <h3 >Cinetic Type</h3>
+            <p>{{cinetica.tipo }}</p>
+          </div>
+        </md-list-item>
+        <md-list-item class="list list-item-card">
+          <md-icon svgIcon="molecula" class="icon-elements-view icon-list" ></md-icon>
+          <div >
+            <h3 >Molecule</h3>
+            <p>{{cinetica.molecula.nombre}}</p>
+          </div>
+
+        </md-list-item>
+        <md-divider md-inset hide-sm></md-divider>
+        <md-divider hide-gt-sm></md-divider>
+        <md-list-item class="footer list-item-card">
+          <div class="footer-content">
+            <h4>KM</h4>
+            <p>{{getStringValue(cinetica.km)}}</p>
+          </div>
+          <div class="footer-content">
+            <h4>KCAT</h4>
+            <p>{{getStringValue(cinetica.kcat)}}</p>
+          </div>
+          <div class="footer-content">
+            <h4>KMKCAT</h4>
+            <p>{{getStringValue(cinetica.kmKcat)}}</p>
+          </div >
+        </md-list-item>
+      </md-list>
+  </md-card>
+</div>

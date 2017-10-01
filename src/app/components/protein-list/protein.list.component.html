@@ -37,21 +37,37 @@
     <!--</md-tab>-->
 
                 <md-card *ngFor="let protein of list" class="sampleClass">
-                    <md-card-header color = "pimary">
-                        <md-card-title>
-                            {{protein.nombre}}
-                        </md-card-title>
-                        <md-card-subtitle>
-                            FAMILY {{protein.familia}}
-                        </md-card-subtitle>
-                    </md-card-header>
-                    <md-card-content>
-                        <p>
-                           ORGANISM: {{protein.organismo}}
-                        </p>
-                    </md-card-content>
-                    <md-card-actions>
-                        <button md-icon-button color="primary" >
+                    <md-toolbar class="card-toolbar" color="primary">
+                        <md-list class="list-header">
+                            <md-list-item class="list list-item-header">
+                                <md-icon svgIcon="protein" class="icon-elements-view" ></md-icon>
+                                <div class="header-content" >
+                                    <h2>{{protein.nombre}}</h2>
+                                    <label>Family {{protein.familia}}</label>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+
+
+                    </md-toolbar>
+                    <md-list>
+                        <md-list-item class="list list-item-card">
+                            <div >
+                                <h3 >Organism</h3>
+                                <p>{{protein.organismo }}</p>
+                            </div>
+                        </md-list-item>
+                        <md-list-item class="list list-item-card">
+                            <div >
+                                <h3 >Iniprot ID</h3>
+                                <p>{{protein.codigoUniProt}}</p>
+                            </div>
+
+                        </md-list-item>
+
+                    </md-list>
+                    <md-card-actions class="card-actions">
+                        <button md-icon-button color="primary"  (click)="showProtein(protein.id)" >
                             <md-icon class="md-24" aria-label="Example icon-button with a heart icon">search</md-icon>
                         </button>
                     </md-card-actions>

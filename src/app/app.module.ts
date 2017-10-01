@@ -4,7 +4,9 @@ import {NgModule} from "@angular/core";
 import {AppComponent} from "./app.component";
 import {HeaderComponent} from "./components/header/header.component";
 import {
-  MdButtonModule, MdCardModule, MdExpansionModule, MdIconModule, MdInputModule, MdTableModule, MdTabsModule,
+  MdButtonModule, MdCardModule, MdExpansionModule, MdIconModule, MdIconRegistry, MdInputModule, MdListModule,
+  MdTableModule,
+  MdTabsModule,
   MdToolbarModule
 } from "@angular/material";
 import {AppRoutingModule} from "./app.routing";
@@ -20,6 +22,7 @@ import {EnvironmentService} from "./service/environment.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ProteinFormComponent} from "./components/protein-form/protein.form.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ReactionListComponent } from './reaction-list/reaction-list.component';
 
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
@@ -35,7 +38,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     HomeComponent,
     SearchComponent,
     ProteinListComponent,
-    ProteinFormComponent
+    ProteinFormComponent,
+    ReactionListComponent
 
   ],
   imports: [
@@ -52,12 +56,14 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     MdTabsModule,
     MdExpansionModule,
     MdInputModule,
-    HttpModule
+    HttpModule,
+      MdListModule
   ],
   providers: [
       ErrorNotifierService,
       ProteinDataService,
       EnvironmentService,
+      MdIconRegistry,
     {provide: RequestOptions, useClass: Configuration},
     {
       provide: Http,
