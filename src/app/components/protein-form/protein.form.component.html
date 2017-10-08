@@ -1,74 +1,106 @@
 
-    <md-expansion-panel>
-        <md-expansion-panel-header>
+
+
+<md-expansion-panel hideToggle="true" [expanded] =true>
+        <md-expansion-panel-header >
             <md-panel-title>
-                <h2>General Information</h2>
+                <div>
+
+                    <h2>General Information</h2>
+                </div>
+
             </md-panel-title>
             <md-panel-description>
-
+                <md-icon svgIcon="protein" class="icon-elements-view"  color="primary"></md-icon>
             </md-panel-description>
         </md-expansion-panel-header>
-        <md-list>
-            <md-list-item>
-                <div>
-                    <h3>
-                        Name
-                    </h3>
-                    <p>{{model.nombre}}</p>
-                </div>
-            </md-list-item>
-            <md-list-item>
-                <div>
-                    <h3>
-                        Organism
-                    </h3>
-                    <p>{{model.organismo}}</p>
-                </div>
-            </md-list-item>
-            <md-list-item>
-                <div>
-                    <h3>
-                        Family
-                    </h3>
-                    <p>{{model.familia}}</p>
-                </div>
-            </md-list-item>
-        </md-list>
-            <!--<md-input-container class="full-width">
-                <input mdInput placeholder="Nombre"  required [(ngModel)] = model.nombre name="nombre" [disabled]="!isEdit">
-            </md-input-container>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Organismo"  required [(ngModel)] = model.organismo name="organismo" [disabled]="!isEdit">
-            </md-input-container>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Familia"  required [(ngModel)] = model.familia name="familia" [disabled]="!isEdit">
-            </md-input-container>
-            <md-input-container class="full-width">
-                <textarea mdInput placeholder="Secuencia"  required [(ngModel)] = model.secuencia name="secuenca" [disabled]="!isEdit"></textarea>
-            </md-input-container>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Codigo UniProt"  required [(ngModel)] = model.codigoUniProt name="codigoUniProt" [disabled]="!isEdit">
+        <div class="div-content-card">
+            <md-card class="card-general">
+                <md-list>
+                    <md-list-item class="list list-item-card">
+                        <div>
+                            <h3>
+                                Name
+                            </h3>
+                            <p>{{model.nombre}}</p>
+                        </div>
+                    </md-list-item>
+                    <md-divider hide-gt-sm></md-divider>
+                    <md-list-item class="list list-item-card">
+                        <div>
+                            <h3>
+                                Organism
+                            </h3>
+                            <p>{{model.organismo}}</p>
+                        </div>
+                    </md-list-item>
+                    <md-divider md-inset hide-sm></md-divider>
+                    <md-list-item class="list list-item-card">
+                        <div>
+                            <h3>
+                                Family
+                            </h3>
+                            <p>{{model.familia}}</p>
+                        </div>
+                    </md-list-item>
+                    <md-divider hide-gt-sm></md-divider>
+                    <md-list-item class="list list-item-card">
+                        <div>
+                            <h3>
+                                Uniprot Id
+                            </h3>
+                            <p>{{model.codigoUniProt}}</p>
+                        </div>
+                    </md-list-item>
+                    <md-divider hide-gt-sm></md-divider>
+                    <md-list-item class="list list-item-card">
+                        <div>
+                            <h3>
+                                Kegg Id
+                            </h3>
+                            <p>{{model.codigoKegg}}</p>
+                        </div>
+                    </md-list-item>
+                    <md-divider hide-gt-sm></md-divider>
+                </md-list>
 
-            </md-input-container>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Codio Keg"  required [(ngModel)] = model.codigoKegg name="codigoKegg" [disabled]="!isEdit">
-            </md-input-container>
+            </md-card>
 
-
-
-                <br />-->
+        </div>
 
     </md-expansion-panel>
-    <md-expansion-panel>
-        <md-expansion-panel-header>
+
+    <md-expansion-panel hideToggle="true" >
+        <md-expansion-panel-header >
             <md-panel-title>
-                <h2>Reactions</h2>
+                <div>
+
+                    <h2>Reactions</h2>
+                </div>
+
             </md-panel-title>
             <md-panel-description>
-
+                <md-icon svgIcon="reaccion" class="icon-elements-view"  color="primary"></md-icon>
             </md-panel-description>
         </md-expansion-panel-header>
         <app-reaction-list [list]="model.reacciones"></app-reaction-list>
+    </md-expansion-panel>
+
+    <md-expansion-panel hideToggle="true" >
+        <md-expansion-panel-header >
+            <md-panel-title>
+                <div>
+
+                    <h2>Structures</h2>
+                </div>
+
+            </md-panel-title>
+            <md-panel-description>
+                <md-icon svgIcon="structure" class="icon-elements-view"  color="primary"></md-icon>
+            </md-panel-description>
+
+        </md-expansion-panel-header>
+        <app-structrue-list [list]="model.estructurasPDB"></app-structrue-list>
     </md-expansion-panel>
 
 

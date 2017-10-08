@@ -35,6 +35,7 @@
             <!--</md-table>-->
         <!--</div>-->
     <!--</md-tab>-->
+    <div class="div-container">
 
                 <md-card *ngFor="let protein of list" class="sampleClass">
                     <md-toolbar class="card-toolbar" color="primary">
@@ -42,8 +43,8 @@
                             <md-list-item class="list list-item-header">
                                 <md-icon svgIcon="protein" class="icon-elements-view" ></md-icon>
                                 <div class="header-content" >
-                                    <h2>{{protein.nombre}}</h2>
-                                    <label>Family {{protein.familia}}</label>
+                                    <h2>{{splitString(protein.nombre)}}</h2>
+                                    <label>Family {{splitString(protein.familia)}}</label>
                                 </div>
                             </md-list-item>
                         </md-list>
@@ -66,13 +67,15 @@
                         </md-list-item>
 
                     </md-list>
-                    <md-card-actions class="card-actions">
+                    <div class="div-actions">
                         <button md-icon-button color="primary"  (click)="showProtein(protein.id)" >
                             <md-icon class="md-24" aria-label="Example icon-button with a heart icon">search</md-icon>
                         </button>
-                    </md-card-actions>
+                    </div>
+
+
 
                 </md-card>
 
-
+    </div>
 

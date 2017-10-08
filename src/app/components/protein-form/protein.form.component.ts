@@ -67,4 +67,5 @@ export class ProteinFormComponent implements OnInit{
     //     this.showDois =!this.showDois;
     // }
 
+
 }

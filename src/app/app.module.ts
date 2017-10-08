@@ -22,7 +22,9 @@ import {EnvironmentService} from "./service/environment.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ProteinFormComponent} from "./components/protein-form/protein.form.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { ReactionListComponent } from './reaction-list/reaction-list.component';
+import { ReactionListComponent } from './components/reaction-list/reaction-list.component';
+import { StructrueListComponent } from './components/structrue-list/structrue-list.component';
+import { SequenceFormComponent } from './components/sequence-form/sequence-form.component';
 
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
@@ -39,7 +41,9 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     SearchComponent,
     ProteinListComponent,
     ProteinFormComponent,
-    ReactionListComponent
+    ReactionListComponent,
+    StructrueListComponent,
+    SequenceFormComponent
 
   ],
   imports: [

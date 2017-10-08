@@ -1,3 +1,4 @@
+@import "../../../styles";
 .form {
   width: 500px;
 }
@@ -39,13 +40,52 @@
   bottom: 2px;
 }
 
-.example-headers-align .mat-expansion-panel-header-title,
-.example-headers-align .mat-expansion-panel-header-description {
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
   flex-basis: 0;
 }
 
-.example-headers-align .mat-expansion-panel-header-description {
-  justify-content: space-between;
+.mat-expansion-panel-header-description {
+  flex-flow: row-reverse;
   align-items: center;
+
 }
 
+.icon-elements-view {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  border-radius: 50%;
+  box-sizing: content-box;
+
+}
+
+.table-header{
+  background-color: mat-color($primary, lighter, 0.5);
+}
+
+
+.list{
+  display: inline-flex;
+  flex: 1;
+  padding: 16px 0;
+  text-overflow: ellipsis;
+
+}
+
+.list-item-card{
+  font-size: 14px;
+  padding-top: 6px;
+  padding-bottom: 6px
+}
+
+.card-general{
+  width: 90%;
+}
+
+.div-content-card{
+  width:100%;
+  padding-left: 100px;
+}

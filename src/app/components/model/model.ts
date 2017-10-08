@@ -14,6 +14,7 @@ export class Protein{
     public familia:string;
     public codigoKegg:string;
     public reacciones =[];
+    public estructurasPDB =[]
 
 }
 

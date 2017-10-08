@@ -2,15 +2,11 @@
  * Created by murmu on 18/09/17.
  */
 
-import {Component, OnInit} from '@angular/core';
-import {DataSource} from '@angular/cdk/collections';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map'
+import {Component, OnInit} from "@angular/core";
+import "rxjs/add/observable/of";
+import "rxjs/add/operator/map";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProteinDataService} from "../../service/protein.data.srv";
-import {MdIconRegistry} from "@angular/material";
-import {DomSanitizer} from "@angular/platform-browser";
 
 /**
  * @title Basic table
@@ -27,10 +23,7 @@ export class ProteinListComponent implements OnInit{
     private sub;
     private searchText:string;
 
-    constructor(private route:ActivatedRoute,private proteinDataService:ProteinDataService,private router:Router,mdIconRegistry: MdIconRegistry, sanitizer: DomSanitizer){
-        mdIconRegistry
-            .addSvgIcon('protein',
-                sanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/protein.svg'))
+    constructor(private route:ActivatedRoute,private proteinDataService:ProteinDataService,private router:Router){
 
     }
 
@@ -59,6 +52,12 @@ export class ProteinListComponent implements OnInit{
 
     showProtein(id){
         this.router.navigate(['/protein/'+ id]);
+    }
+
+    splitString(name:string):string{
+        let splitArray = name.split("/");
+        return splitArray.length>0?splitArray[0]:""
+
     }
 }
 
