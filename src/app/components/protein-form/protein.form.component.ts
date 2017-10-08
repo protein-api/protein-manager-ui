@@ -44,28 +44,9 @@ export class ProteinFormComponent implements OnInit{
         else this.isEdit = true;
     }
 
-    // save():void{
-    //     this.proteinaDataService.saveProteinaPromise(this.model).map((r: any) => r.json()).subscribe((response: any) => {
-    //         let idProteina = response.id;
-    //         this.alertService.showToaster("La Proteina fue salvada correctamente")
-    //         this.router.navigate(['proteina/'+idProteina]);
-    //
-    //     });
-    // }
+   splitSequence(sequence:string){
+        return sequence?sequence.split(" "):[];
 
-    // nuevoDOI(){
-    //     let dialogRef: MdDialogRef<EnlaceDialogComponent>;
-    //     dialogRef = this.dialog.open(EnlaceDialogComponent)
-    //     dialogRef.afterClosed().subscribe(result=>{
-    //         if(result.event == "Guardar"){
-    //             this.enlaceService.saveDoi(this.proteinaId,result.object);
-    //         }
-    //     });
-    // }
-    //
-    // showDoisClick(){
-    //     this.showDois =!this.showDois;
-    // }
-
+   }
 
 }

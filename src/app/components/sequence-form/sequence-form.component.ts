@@ -13,4 +13,8 @@ export class SequenceFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  getHeaderIndex(i:any){
+    return (i+1)*10
+  }
+
 }

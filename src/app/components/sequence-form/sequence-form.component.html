@@ -1,3 +1,14 @@
-<div  *ngFor="let sequence of list">
+<div class="content">
+  <div  *ngFor="let sequence of list; let i=index" class="content-sequence">
+    <div >
+      <h4>
+        {{getHeaderIndex(i)}}
+      </h4>
+      <p>
+        {{sequence}}
+      </p>
+    </div>
+
+  </div>
 
 </div>
