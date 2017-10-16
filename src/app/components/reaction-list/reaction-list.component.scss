@@ -60,9 +60,25 @@
   box-sizing: content-box;
 
 }
+.button-icon{
+  width: 32px;
+  height: 32px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  border-radius: 50%;
+  box-sizing: content-box;
+  md-icon{
+    height: 100%;
+    width: 100%;
+  }
+}
 .icon-list{
   width: 32px;
   height: 32px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
 }
 
 .md-headline {

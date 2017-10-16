@@ -60,17 +60,31 @@
                         </md-list-item>
                         <md-list-item class="list list-item-card">
                             <div >
-                                <h3 >Iniprot ID</h3>
+                                <h3 >Uiprot ID</h3>
                                 <p>{{protein.codigoUniProt}}</p>
                             </div>
 
                         </md-list-item>
-
+                        <md-divider md-inset hide-sm></md-divider>
+                        <md-divider hide-gt-sm></md-divider>
                     </md-list>
                     <div class="div-actions">
-                        <button md-icon-button color="primary"  (click)="showProtein(protein.id)" >
-                            <md-icon class="md-24" aria-label="Example icon-button with a heart icon">search</md-icon>
-                        </button>
+                        <div class="container">
+                            <button md-icon-button color="primary"  (click)="showProtein(protein.id)" >
+                                <md-icon class="md-24" aria-label="Example icon-button with a heart icon">search</md-icon>
+                            </button>
+                        </div>
+
+                        <div class="container ">
+                            <md-icon svgIcon="structure" color="primary" class="icon-elements-view icon-list" ></md-icon>
+                            <span>{{getAmountStructures(protein)}}</span>
+                        </div>
+                        <div class="container left">
+                            <md-icon svgIcon="reaccion" color="primary" class="icon-elements-view icon-list" ></md-icon>
+                            <span>{{getAmountReactions(protein)}}</span>
+                        </div>
+
+
                     </div>
 
 

@@ -14,4 +14,8 @@ export class StructrueListComponent implements OnInit {
   ngOnInit() {
   }
 
+  clickStructure(url:string){
+    window.open(url);
+  }
+
 }

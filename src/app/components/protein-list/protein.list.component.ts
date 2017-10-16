@@ -59,6 +59,14 @@ export class ProteinListComponent implements OnInit{
         return splitArray.length>0?splitArray[0]:""
 
     }
+
+    getAmountReactions(model){
+        return model.reacciones.length;
+    }
+
+    getAmountStructures(model){
+        return model.estructurasPDB.length;
+    }
 }
 
 export interface Element {

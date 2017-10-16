@@ -21,4 +21,8 @@ export class ReactionListComponent implements OnInit {
     return value?value:'-'
   }
 
+  clickMolecule(url:string){
+    window.open(url);
+  }
+
 }

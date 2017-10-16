@@ -24,7 +24,9 @@
           </div>
         </md-list-item>
         <md-list-item class="list list-item-card">
-          <md-icon svgIcon="molecula" class="icon-elements-view icon-list" ></md-icon>
+          <button md-icon-button   type="button" class="button-icon" (click)="clickMolecule(cinetica.molecula.link)">
+            <md-icon svgIcon="molecula"  ></md-icon>
+           </button>
           <div >
             <h3 >Molecule</h3>
             <p>{{cinetica.molecula.nombre}}</p>
