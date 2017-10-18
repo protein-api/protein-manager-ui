@@ -7,7 +7,7 @@ import {
   MdButtonModule, MdCardModule, MdExpansionModule, MdIconModule, MdIconRegistry, MdInputModule, MdListModule,
   MdTableModule,
   MdTabsModule,
-  MdToolbarModule
+  MdToolbarModule, MdTooltipModule
 } from "@angular/material";
 import {AppRoutingModule} from "./app.routing";
 import {HomeComponent} from "./components/home/home.component";
@@ -61,7 +61,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     MdExpansionModule,
     MdInputModule,
     HttpModule,
-      MdListModule
+      MdListModule,
+      MdTooltipModule
   ],
   providers: [
       ErrorNotifierService,

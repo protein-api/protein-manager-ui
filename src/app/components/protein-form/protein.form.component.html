@@ -1,7 +1,6 @@
 
-
-
-<md-expansion-panel hideToggle="true" [expanded] =true>
+<div class="container-body">
+    <md-expansion-panel hideToggle="true" [expanded] =true>
         <md-expansion-panel-header >
             <md-panel-title>
                 <div>
@@ -117,6 +116,24 @@
         </md-expansion-panel-header>
         <app-structrue-list [list]="model.estructurasPDB"></app-structrue-list>
     </md-expansion-panel>
+    <md-expansion-panel hideToggle="true" >
+        <md-expansion-panel-header >
+            <md-panel-title>
+                <div>
+
+                    <h2>Links</h2>
+                </div>
+
+            </md-panel-title>
+            <md-panel-description>
+                <md-icon svgIcon="link" class="icon-elements-view"  color="primary"></md-icon>
+            </md-panel-description>
+
+        </md-expansion-panel-header>
+
+    </md-expansion-panel>
 
 
+
+</div>
 

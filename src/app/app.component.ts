@@ -23,6 +23,9 @@ export class AppComponent {
             sanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/structure.svg'))
         .addSvgIcon('sequence',
             sanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/sequence.svg'))
+        .addSvgIcon('link',
+            sanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/links.svg'))
+
 
   }
   title = 'app';

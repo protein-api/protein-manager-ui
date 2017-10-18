@@ -107,6 +107,21 @@
   }
 }
 
+.header-content{
+  width: 70%;
+  h2{
+    display: block;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+  }
+  label{
+    display: block;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
+}
+
 
 
 @media only screen and (max-width: 1024px) {

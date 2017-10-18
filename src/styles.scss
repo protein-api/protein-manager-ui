@@ -9,7 +9,9 @@ $warn:    mat-palette($mat-red, 500, 300, 900);
 // Create the theme object (a Sass map containing all of the palettes).
 $theme: mat-light-theme($primary, $accent, $warn);
 
-
+body{
+  margin: 0px;
+}
 
 @include angular-material-theme($theme);
 
