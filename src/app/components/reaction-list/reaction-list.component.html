@@ -7,7 +7,8 @@
             <md-icon svgIcon="reaccion" class="icon-elements-view" ></md-icon>
             <div class="header-content">
               <h2 mdTooltip="{{reaction.nombre}}"  >{{reaction.nombre}}</h2>
-              <label>TYPE {{reaction.tipo}}</label>
+              <span>TYPE: {{reaction.tipo}}</span>
+              <span>Ec: {{reaction.ec}}</span>
             </div>
           </md-list-item>
         </md-list>
@@ -36,17 +37,17 @@
         <md-divider md-inset hide-sm></md-divider>
         <md-divider hide-gt-sm></md-divider>
         <md-list-item class="footer list-item-card">
-          <div class="footer-content">
+          <div class="footer-values-container">
             <h4>KM</h4>
-            <p>{{getStringValue(cinetica.km)}}</p>
+            <span>{{getStringValue(cinetica.km)}}</span>
           </div>
-          <div class="footer-content">
+          <div class="footer-values-container">
             <h4>KCAT</h4>
-            <p>{{getStringValue(cinetica.kcat)}}</p>
+            <span>{{getStringValue(cinetica.kcat)}}</span>
           </div>
-          <div class="footer-content">
+          <div class="footer-values-container">
             <h4>KMKCAT</h4>
-            <p>{{getStringValue(cinetica.kmKcat)}}</p>
+            <span>{{getStringValue(cinetica.kmKcat)}}</span>
           </div >
         </md-list-item>
       </md-list>
