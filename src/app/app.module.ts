@@ -25,6 +25,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ReactionListComponent } from './components/reaction-list/reaction-list.component';
 import { StructrueListComponent } from './components/structrue-list/structrue-list.component';
 import { SequenceFormComponent } from './components/sequence-form/sequence-form.component';
+import { LinListComponent } from './components/lin-list/lin-list.component';
 
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
@@ -43,7 +44,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     ProteinFormComponent,
     ReactionListComponent,
     StructrueListComponent,
-    SequenceFormComponent
+    SequenceFormComponent,
+    LinListComponent
 
   ],
   imports: [
