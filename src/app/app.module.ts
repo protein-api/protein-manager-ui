@@ -26,6 +26,7 @@ import { ReactionListComponent } from './components/reaction-list/reaction-list.
 import { StructrueListComponent } from './components/structrue-list/structrue-list.component';
 import { SequenceFormComponent } from './components/sequence-form/sequence-form.component';
 import { LinListComponent } from './components/lin-list/lin-list.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
@@ -45,7 +46,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     ReactionListComponent,
     StructrueListComponent,
     SequenceFormComponent,
-    LinListComponent
+    LinListComponent,
+    FooterComponent
 
   ],
   imports: [
