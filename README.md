@@ -1,7 +1,7 @@
 # Require
 You need to set up your development environment before you can do anything.
 
-Install [Node.js® and npm] (https://nodejs.org/en/download/) if they are not already on your machine.
+Install [Node.js® and npm](https://nodejs.org/en/download/) if they are not already on your machine.
 
 run npm install to download all dependencies before run server
 
