@@ -1,4 +1,11 @@
-# Angula4FinalSeed
+# Require
+You need to set up your development environment before you can do anything.
+
+Install [Node.js® and npm](https://nodejs.org/en/download/) if they are not already on your machine.
+
+run npm install to download all dependencies before run server
+
+# Protein Manager UI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
 
