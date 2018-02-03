@@ -1,41 +1,16 @@
+<div class="section">
+  <div class="row grid">
+      <div class="col s12 m4 l2 box-b" *ngFor="let protein of list" (click)="showProtein(protein.id)">
+        <app-protein-card [protein]="protein"></app-protein-card>
+    </div>
+</div>
 
-    <!--<md-tab label="LIST">-->
-        <!--<div >-->
-            <!--<md-table #table [dataSource]="dataSource">-->
 
-                <!--&lt;!&ndash;- Note that these columns can be defined in any order.-->
-                      <!--The actual rendered columns are set as a property on the row definition" &ndash;&gt;-->
 
-                <!--&lt;!&ndash; Position Column &ndash;&gt;-->
-                <!--<ng-container mdColumnDef="nombre">-->
-                    <!--<md-header-cell *mdHeaderCellDef> nombre </md-header-cell>-->
-                    <!--<md-cell *mdCellDef="let element"> {{element.nombre}} </md-cell>-->
-                <!--</ng-container>-->
 
-                <!--&lt;!&ndash; Name Column &ndash;&gt;-->
-                <!--<ng-container mdColumnDef="codigoUniProt">-->
-                    <!--<md-header-cell *mdHeaderCellDef> codigoUniProt </md-header-cell>-->
-                    <!--<md-cell *mdCellDef="let element"> {{element.codigoUniProt}} </md-cell>-->
-                <!--</ng-container>-->
 
-                <!--&lt;!&ndash; Weight Column &ndash;&gt;-->
-                <!--<ng-container mdColumnDef="organismo">-->
-                    <!--<md-header-cell *mdHeaderCellDef> organismo </md-header-cell>-->
-                    <!--<md-cell *mdCellDef="let element"> {{element.organismo}} </md-cell>-->
-                <!--</ng-container>-->
 
-                <!--&lt;!&ndash; Color Column &ndash;&gt;-->
-                <!--<ng-container mdColumnDef="familia">-->
-                    <!--<md-header-cell *mdHeaderCellDef> familia </md-header-cell>-->
-                    <!--<md-cell *mdCellDef="let element"> {{element.familia}} </md-cell>-->
-                <!--</ng-container>-->
-
-                <!--<md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>-->
-                <!--<md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>-->
-            <!--</md-table>-->
-        <!--</div>-->
-    <!--</md-tab>-->
-    <div class="div-container">
+    <!-- <div class="div-container">
 
                 <md-card *ngFor="let protein of list" class="sampleClass">
                     <md-toolbar class="card-toolbar" color="primary">
@@ -91,5 +66,4 @@
 
                 </md-card>
 
-    </div>
-
+    </div> -->

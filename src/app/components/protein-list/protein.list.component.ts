@@ -83,4 +83,3 @@ export interface  Protein {
     organismo: string;
     familia: string;
 }
-

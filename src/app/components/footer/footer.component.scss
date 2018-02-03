@@ -11,11 +11,13 @@
 }
 
 .footer-icon{
-  padding-top: 15px;
   height: 35px;
   width: 35px;
 }
 
 .footer{
-  height: 80px;
+  position: fixed;
+  left:0px;
+  bottom:0px;
+  width:100%;
 }

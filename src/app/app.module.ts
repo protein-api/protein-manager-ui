@@ -27,6 +27,11 @@ import { StructrueListComponent } from './components/structrue-list/structrue-li
 import { SequenceFormComponent } from './components/sequence-form/sequence-form.component';
 import { LinListComponent } from './components/lin-list/lin-list.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { Header2Component } from './components/header2/header2.component';
+import { Home2Component } from './components/home2/home2.component';
+import { Footer2Component } from './components/footer2/footer2.component';
+import { ProteinCardComponent } from './components/protein-card/protein-card.component';
+import { ProteinFullViewComponent } from './components/protein-full-view/protein-full-view.component';
 
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
@@ -47,7 +52,12 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     StructrueListComponent,
     SequenceFormComponent,
     LinListComponent,
-    FooterComponent
+    FooterComponent,
+    Header2Component,
+    Home2Component,
+    Footer2Component,
+    ProteinCardComponent,
+    ProteinFullViewComponent
 
   ],
   imports: [
