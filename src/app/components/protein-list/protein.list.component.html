@@ -1,8 +1,16 @@
 <div class="section">
+  <search-component class="search-component"></search-component>
+</div>
+
+<div class="section">
   <div class="row grid">
-      <div class="col s12 m4 l2 box-b" *ngFor="let protein of list" (click)="showProtein(protein.id)">
+      <div class="col s12 m4 l2 box-b" *ngFor="let protein of proteins" (click)="showProtein(protein.id)">
         <app-protein-card [protein]="protein"></app-protein-card>
     </div>
+</div>
+
+<div class="section" *ngIf="isEmptyList">
+  <p>No proteins were found.</p>
 </div>
 
 

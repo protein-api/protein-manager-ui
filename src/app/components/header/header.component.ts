@@ -1,38 +1,23 @@
-import {Component} from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
+declare const jQuery:any;
+declare const $:any;
 
 @Component({
   selector: 'app-header',
-  templateUrl: 'header.component.html',
-  styleUrls: ['./header.component.scss'],
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
-  title: string = '';
-  isAuthenticated = false;
+export class HeaderComponent implements OnInit {
 
+  constructor() { }
 
-
-  user() {
-
+  ngOnInit() {
+    this.initHeader();
   }
 
-  profileUsername: string = '';
-
-
-
-  public menuItems: Array<Object> = [
-    {
-      icon: 'photo_library',
-      title: 'Portfolio',
-      link: 'https://jerouw.nl'
-    },
-    {
-      icon: 'link',
-      title: 'Fork on Github',
-      link: 'https://github.com/jeroenouw/Angular4MaterialDesign'
-    },
-  ];
-
-
+  initHeader() {
+    $('.button-collapse').sideNav();
+  }
 
 }

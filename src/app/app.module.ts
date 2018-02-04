@@ -2,7 +2,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from "@angular/core";
 
 import {AppComponent} from "./app.component";
-import {HeaderComponent} from "./components/header/header.component";
+
 import {
   MdButtonModule, MdCardModule, MdExpansionModule, MdIconModule, MdIconRegistry, MdInputModule, MdListModule,
   MdTableModule,
@@ -26,8 +26,7 @@ import { ReactionListComponent } from './components/reaction-list/reaction-list.
 import { StructrueListComponent } from './components/structrue-list/structrue-list.component';
 import { SequenceFormComponent } from './components/sequence-form/sequence-form.component';
 import { LinListComponent } from './components/lin-list/lin-list.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { Header2Component } from './components/header2/header2.component';
+import {HeaderComponent} from "./components/header/header.component";
 import { Home2Component } from './components/home2/home2.component';
 import { Footer2Component } from './components/footer2/footer2.component';
 import { ProteinCardComponent } from './components/protein-card/protein-card.component';
@@ -52,8 +51,6 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     StructrueListComponent,
     SequenceFormComponent,
     LinListComponent,
-    FooterComponent,
-    Header2Component,
     Home2Component,
     Footer2Component,
     ProteinCardComponent,

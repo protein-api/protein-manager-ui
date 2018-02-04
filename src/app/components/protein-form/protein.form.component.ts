@@ -16,10 +16,6 @@ export class ProteinFormComponent implements OnInit{
     private proteinaId:string;
     private showDois:boolean = false;
 
-
-
-
-
     constructor(private proteinaDataService:ProteinDataService,private router:Router, private route:ActivatedRoute) {
         this.proteinaId = this.route.snapshot.params['idProtein'];
         this.isEdit = this.proteinaId?true:false;
@@ -28,25 +24,21 @@ export class ProteinFormComponent implements OnInit{
 
     ngOnInit() {
         this.fetchProteina();
-
     }
 
     fetchProteina(){
-        if(this.proteinaId){
-            this.proteinaDataService.getProteinaPromise(this.proteinaId).map((r: any) => r.json()).subscribe((response:any) =>{
-                this.model = response;
-
-                this.isEdit = false;
-
-
-            });
-        }
-        else this.isEdit = true;
+      
+        // if(this.proteinaId){
+        //     this.proteinaDataService.search(this.proteinaId).map((r: any) => r.json()).subscribe((response:any) =>{
+        //         this.model = response;
+        //         this.isEdit = false;
+        //     });
+        // }
+        // else this.isEdit = true;
     }
 
    splitSequence(sequence:string){
         return sequence?sequence.split(" "):[];
-
    }
 
 }

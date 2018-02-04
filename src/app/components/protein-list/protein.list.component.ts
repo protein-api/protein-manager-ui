@@ -2,11 +2,12 @@
  * Created by murmu on 18/09/17.
  */
 
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, OnDestroy} from "@angular/core";
 import "rxjs/add/observable/of";
 import "rxjs/add/operator/map";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router, NavigationStart} from "@angular/router";
 import {ProteinDataService} from "../../service/protein.data.srv";
+import { Subscription } from 'rxjs/Subscription';
 
 /**
  * @title Basic table
@@ -16,56 +17,45 @@ import {ProteinDataService} from "../../service/protein.data.srv";
     styleUrls: ['protein.list.component.scss'],
     templateUrl: 'protein.list.component.html',
 })
+
 export class ProteinListComponent implements OnInit{
     displayedColumns = ['nombre', 'codigoUniProt', 'organismo', 'familia'];
 
-    public list =[]
-    private sub;
     private searchText:string;
+    private isEmptyList:boolean = false;
+    private proteins = [];
+    private subscription: Subscription;
 
-    constructor(private route:ActivatedRoute,private proteinDataService:ProteinDataService,private router:Router){
-
+    constructor(private route:ActivatedRoute, private proteinDataService:ProteinDataService, private router:Router){
+      this.subscription = this.proteinDataService.getSearchResult()
+      .subscribe(proteins => {
+        console.log(proteins);
+        this.proteins = proteins;
+      });
     }
 
-    ngOnInit(){
-        this.sub = this.route.queryParams.subscribe(
-            params =>{
-                this.searchText = params['search'] ||"";
-                this.fetchProteins(this.searchText);
-            }
-        )
+    ngOnInit(){}
 
-
-    }
-
-    fetchProteins(textSearch:string){
-        this.proteinDataService.getProteinaListPromise(textSearch).map((r:any) => r.json())
-            .subscribe((response:any) =>{
-                this.list = response
-
-            })
-    }
-
-    ngOnDestroy(){
-        this.sub.unsubscribe();
+    ngOnDestroy() {
+      this.subscription.unsubscribe();
     }
 
     showProtein(id){
-        this.router.navigate(['/protein/'+ id]);
+      this.router.navigate(['/protein/'+ id]);
     }
 
     splitString(name:string):string{
-        let splitArray = name.split("/");
-        return splitArray.length>0?splitArray[0]:""
+      let splitArray = name.split("/");
+      return splitArray.length>0?splitArray[0]:""
 
     }
 
     getAmountReactions(model){
-        return model.reacciones.length;
+      return model.reacciones.length;
     }
 
     getAmountStructures(model){
-        return model.estructurasPDB.length;
+      return model.estructurasPDB.length;
     }
 }
 

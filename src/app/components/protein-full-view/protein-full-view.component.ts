@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-declare var jQuery:any;
-declare var $:any;
+declare const jQuery:any;
+declare const $:any;
 
 @Component({
   selector: 'app-protein-full-view',

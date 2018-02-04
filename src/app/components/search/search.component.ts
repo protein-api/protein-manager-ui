@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
+import {ProteinDataService} from "../../service/protein.data.srv";
 
 @Component({
     selector:'search-component',
@@ -7,26 +8,19 @@ import {Router} from "@angular/router";
     styleUrls:['./search.component.scss']
 
 })
+
 export class SearchComponent implements OnInit{
 
+  constructor(private router:Router, private proteinDataService:ProteinDataService){}
 
-    constructor( private router:Router){
+  ngOnInit() {}
 
+  backClick(){}
+
+  enter = (text:string) => {
+    if(text) {
+      this.router.navigate(['/proteins']);
+      this.proteinDataService.search(text);
     }
-
-    ngOnInit() {
-
-
-    }
-
-    backClick(){
-
-    }
-
-    enter(value:string){
-
-        this.router.navigate(['/list'], { queryParams: { search: value } });
-    }
-
-
+  }
 }

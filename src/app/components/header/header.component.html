@@ -1,16 +1,13 @@
-<md-toolbar class="header"  color="primary" >
+<nav class="lighten-1" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="/home" class="brand-logo"><i class="material-icons"><md-icon svgIcon="logo" class="header-icon"></md-icon></i>ProtMiscuit</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/proteins">Proteins</a></li>
+    </ul>
 
-
-  <md-icon svgIcon="logo" class="header-icon"></md-icon>
-  <span>ProtMiscuit</span>
-  <span class="spacer-light"></span>
-  <p>
-    <md-icon>home</md-icon>
-    <span>Home</span>
-  </p>
-  <span class="spacer-light"></span>
-    <search-component class="search-component"></search-component>
-  <span class="spacer"></span>
-
-
-</md-toolbar>
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="/proteins">Proteins</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
