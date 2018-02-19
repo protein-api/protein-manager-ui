@@ -3,12 +3,12 @@ import {NgModule} from "@angular/core";
 
 import {AppComponent} from "./app.component";
 
-import {
-  MdButtonModule, MdCardModule, MdExpansionModule, MdIconModule, MdIconRegistry, MdInputModule, MdListModule,
-  MdTableModule,
-  MdTabsModule,
-  MdToolbarModule, MdTooltipModule
-} from "@angular/material";
+// import {
+//   MdButtonModule, MdCardModule, MdExpansionModule, MdIconModule, MdIconRegistry, MdInputModule, MdListModule,
+//   MdTableModule,
+//   MdTabsModule,
+//   MdToolbarModule, MdTooltipModule
+// } from "@angular/material";
 import {AppRoutingModule} from "./app.routing";
 import {HomeComponent} from "./components/home/home.component";
 import {SearchComponent} from "./components/search/search.component";
@@ -63,23 +63,12 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MdToolbarModule,
-    MdIconModule,
-    MdTableModule,
-    MdButtonModule,
-    MdCardModule,
-    MdTabsModule,
-    MdExpansionModule,
-    MdInputModule,
-    HttpModule,
-      MdListModule,
-      MdTooltipModule
+    HttpModule
   ],
   providers: [
       ErrorNotifierService,
       ProteinDataService,
       EnvironmentService,
-      MdIconRegistry,
     {provide: RequestOptions, useClass: Configuration},
     {
       provide: Http,
