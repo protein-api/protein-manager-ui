@@ -7,11 +7,16 @@ import { Subject } from 'rxjs/Subject';
 export class ProteinDataService{
 
   private subject = new Subject<any>();
+  private proteinSubject = new Subject<any>();
 
   constructor(private http:Http){}
 
-  getById(proteinaId:string){
-    return this.http.get('/api/proteins/getById/' + proteinaId);
+  searchById(proteinaId:string){
+    this.http.get('/api/proteins/get/' + proteinaId)
+    .map((r:any) => r.json())
+    .subscribe(result => {
+      this.proteinSubject.next(result);
+    });
   }
 
   getAll() {
@@ -32,5 +37,9 @@ export class ProteinDataService{
 
   getSearchResult():Observable<any> {
     return this.subject.asObservable();
+  }
+
+  getSearchResultById():Observable<any> {
+    return this.proteinSubject.asObservable();
   }
 }
