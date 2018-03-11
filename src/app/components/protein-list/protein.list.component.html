@@ -3,8 +3,8 @@
 </div>
 
 <div class="section">
-  <div class="row grid">
-      <div class="col s12 m4 l2 box-b" *ngFor="let protein of proteins" (click)="showProtein(protein.id)">
+  <div class="row" >
+      <div class="col s12 m8 l5 flow-text" *ngFor="let protein of proteins" (click)="showProtein(protein.id)">
         <app-protein-card [protein]="protein"></app-protein-card>
     </div>
 </div>

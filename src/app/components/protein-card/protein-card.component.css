@@ -1,3 +1,16 @@
 .hand {
   cursor: pointer;
 }
+.img-small {
+  width: 5%;
+  height: 5%;
+}
+
+.ico-red{
+  fill: red;
+  color: red;
+}
+
+.ico-white{
+  fill: white;
+}

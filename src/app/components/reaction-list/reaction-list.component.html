@@ -1,42 +1,42 @@
-<!-- <div  *ngFor="let reaction of list">
-  <md-card *ngFor="let cinetica of reaction.cineticas"  class="sampleClass">
+<div  *ngFor="let reaction of list">
+  <div *ngFor="let cinetica of reaction.cineticas"  class="sampleClass">
 
-      <md-toolbar class="card-toolbar" color="primary">
-        <md-list>
-          <md-list-item class="list list-item-header">
-            <md-icon svgIcon="reaccion" class="icon-elements-view" ></md-icon>
+      <div class="card-toolbar" color="primary">
+        <div>
+          <div class="list list-item-header">
+            <div svgIcon="reaccion" class="icon-elements-view" ></div>
             <div class="header-content">
-              <h2 mdTooltip="{{reaction.nombre}}"  >{{reaction.nombre}}</h2>
+              <h2 {{reaction.nombre}}>{{reaction.nombre}}</h2>
               <span>TYPE: {{reaction.tipo}}</span>
               <span>Ec: {{reaction.ec}}</span>
             </div>
-          </md-list-item>
-        </md-list>
+          </div>
+        </div>
 
 
-      </md-toolbar>
-    <md-divider></md-divider>
-      <md-list>
-        <md-list-item class="list list-item-card">
-          <md-icon svgIcon="cinetica" class="icon-elements-view icon-list" ></md-icon>
+      </div>
+    <div></div>
+      <div>
+        <div class="list list-item-card">
+          <div svgIcon="cinetica" class="icon-elements-view icon-list" ></div>
           <div >
             <h3 >Cinetic Type</h3>
             <p>{{cinetica.tipo }}</p>
           </div>
-        </md-list-item>
-        <md-list-item class="list list-item-card">
-          <button md-icon-button   type="button" class="button-icon" (click)="clickMolecule(cinetica.molecula.link)">
-            <md-icon svgIcon="molecula"  ></md-icon>
+        </div>
+        <div class="list list-item-card">
+          <button div-button   type="button" class="button-icon" (click)="clickMolecule(cinetica.molecula.link)">
+            <div svgIcon="molecula"  ></div>
            </button>
           <div >
             <h3 >Molecule</h3>
             <p>{{cinetica.molecula.nombre}}</p>
           </div>
 
-        </md-list-item>
-        <md-divider md-inset hide-sm></md-divider>
-        <md-divider hide-gt-sm></md-divider>
-        <md-list-item class="footer list-item-card">
+        </div>
+        
+        
+        <div class="footer list-item-card">
           <div class="footer-values-container">
             <h4>KM</h4>
             <span>{{getStringValue(cinetica.km)}}</span>
@@ -49,7 +49,7 @@
             <h4>KMKCAT</h4>
             <span>{{getStringValue(cinetica.kmKcat)}}</span>
           </div >
-        </md-list-item>
-      </md-list>
-  </md-card>
-</div> -->
+        </div>
+      </div>
+  </div>
+</div>
