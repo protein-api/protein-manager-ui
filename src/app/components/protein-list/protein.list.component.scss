@@ -1,6 +1,7 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
   align-content: flex-end;
 }
 
