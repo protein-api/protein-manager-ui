@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { Protein } from "../model/model";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -15,10 +15,12 @@ declare const $:any;
 
 export class ProteinFullViewComponent implements OnInit {
 
-  public protein:Protein;
+  // public protein:Protein;
   private isEdit:boolean;
   private proteinId:string;
   private showDois:boolean = false;
+
+  @Input() protein: any;
 
   constructor(private proteinDataService:ProteinDataService, private router:Router, private route:ActivatedRoute, private _location:Location) {
     this.proteinId = this.route.snapshot.params['idProtein'];
