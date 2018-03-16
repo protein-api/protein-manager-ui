@@ -31,6 +31,7 @@ import { Home2Component } from './components/home2/home2.component';
 import { Footer2Component } from './components/footer2/footer2.component';
 import { ProteinCardComponent } from './components/protein-card/protein-card.component';
 import { ProteinFullViewComponent } from './components/protein-full-view/protein-full-view.component';
+import { ReactionCardComponent } from './components/reaction-card/reaction-card.component';
 
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
@@ -54,7 +55,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     Home2Component,
     Footer2Component,
     ProteinCardComponent,
-    ProteinFullViewComponent
+    ProteinFullViewComponent,
+    ReactionCardComponent
 
   ],
   imports: [

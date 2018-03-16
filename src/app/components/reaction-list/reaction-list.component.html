@@ -1,55 +1,6 @@
-<div  *ngFor="let reaction of list">
-  <div *ngFor="let cinetica of reaction.cineticas"  class="sampleClass">
-
-      <div class="card-toolbar" color="primary">
-        <div>
-          <div class="list list-item-header">
-            <div svgIcon="reaccion" class="icon-elements-view" ></div>
-            <div class="header-content">
-              <h2 {{reaction.nombre}}>{{reaction.nombre}}</h2>
-              <span>TYPE: {{reaction.tipo}}</span>
-              <span>Ec: {{reaction.ec}}</span>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-    <div></div>
-      <div>
-        <div class="list list-item-card">
-          <div svgIcon="cinetica" class="icon-elements-view icon-list" ></div>
-          <div >
-            <h3 >Cinetic Type</h3>
-            <p>{{cinetica.tipo }}</p>
-          </div>
-        </div>
-        <div class="list list-item-card">
-          <button div-button   type="button" class="button-icon" (click)="clickMolecule(cinetica.molecula.link)">
-            <div svgIcon="molecula"  ></div>
-           </button>
-          <div >
-            <h3 >Molecule</h3>
-            <p>{{cinetica.molecula.nombre}}</p>
-          </div>
-
-        </div>
-        
-        
-        <div class="footer list-item-card">
-          <div class="footer-values-container">
-            <h4>KM</h4>
-            <span>{{getStringValue(cinetica.km)}}</span>
-          </div>
-          <div class="footer-values-container">
-            <h4>KCAT</h4>
-            <span>{{getStringValue(cinetica.kcat)}}</span>
-          </div>
-          <div class="footer-values-container">
-            <h4>KMKCAT</h4>
-            <span>{{getStringValue(cinetica.kmKcat)}}</span>
-          </div >
-        </div>
-      </div>
-  </div>
+<div class="section">
+  <div class="row" >
+      <div class="col s12 m6" *ngFor="let reaction of protein.reacciones">
+        <app-reaction-card [reaction]="reaction"></app-reaction-card>
+    </div>
 </div>

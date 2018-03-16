@@ -29,7 +29,6 @@ export class ProteinListComponent implements OnInit{
     constructor(private route:ActivatedRoute, private proteinDataService:ProteinDataService, private router:Router){
       this.subscription = this.proteinDataService.getSearchResult()
       .subscribe(proteins => {
-        console.log(proteins);
         this.proteins = proteins;
       });
     }

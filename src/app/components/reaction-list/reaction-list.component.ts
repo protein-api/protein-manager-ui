@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from "@angular/core";
+import { ProteinDataService } from "../../service/protein.data.srv";
+import { Protein } from "../model/model";
 
 @Component({
   selector: 'app-reaction-list',
@@ -8,9 +10,15 @@ import {Component, Input, OnInit} from "@angular/core";
 export class ReactionListComponent implements OnInit {
 
   @Input() list =[]
+  public protein:Protein;
 
-  constructor() {
-
+  constructor(private proteinDataService:ProteinDataService) {
+    this.protein = new Protein();
+    this.proteinDataService.getSearchResultById()
+      .subscribe( result => {
+          this.protein = result;
+          console.log(this.protein);
+        });
 
   }
 
