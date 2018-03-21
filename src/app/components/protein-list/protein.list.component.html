@@ -4,7 +4,7 @@
 
 <div class="section">
   <div class="row" >
-      <div class="col s12 m8 l5 flow-text" *ngFor="let protein of proteins" (click)="showProtein(protein.id)">
+      <div *ngFor="let protein of proteins" (click)="showProtein(protein.id)">
         <app-protein-card [protein]="protein"></app-protein-card>
     </div>
 </div>
@@ -12,66 +12,3 @@
 <div class="section" *ngIf="isEmptyList">
   <p>No proteins were found.</p>
 </div>
-
-
-
-
-
-
-    <!-- <div class="div-container">
-
-                <md-card *ngFor="let protein of list" class="sampleClass">
-                    <md-toolbar class="card-toolbar" color="primary">
-                        <md-list class="list-header">
-                            <md-list-item class="list list-item-header">
-                                <md-icon svgIcon="protein" class="icon-elements-view" ></md-icon>
-                                <div class="header-content" >
-                                    <h2>{{splitString(protein.nombre)}}</h2>
-                                    <label>Family {{splitString(protein.familia)}}</label>
-                                </div>
-                            </md-list-item>
-                        </md-list>
-
-
-                    </md-toolbar>
-                    <md-list>
-                        <md-list-item class="list list-item-card">
-                            <div >
-                                <h3 >Organism</h3>
-                                <p>{{protein.organismo }}</p>
-                            </div>
-                        </md-list-item>
-                        <md-list-item class="list list-item-card">
-                            <div >
-                                <h3 >Uiprot ID</h3>
-                                <p>{{protein.codigoUniProt}}</p>
-                            </div>
-
-                        </md-list-item>
-                        <md-divider md-inset hide-sm></md-divider>
-                        <md-divider hide-gt-sm></md-divider>
-                    </md-list>
-                    <div class="div-actions">
-                        <div class="container">
-                            <button md-icon-button color="primary"  (click)="showProtein(protein.id)" >
-                                <md-icon class="md-24" aria-label="Example icon-button with a heart icon">search</md-icon>
-                            </button>
-                        </div>
-
-                        <div class="container " mdTooltip="structure">
-                            <md-icon svgIcon="structure" color="primary" class="icon-elements-view icon-list" ></md-icon>
-                            <span>{{getAmountStructures(protein)}}</span>
-                        </div>
-                        <div class="container left" mdTooltip="reactions">
-                            <md-icon svgIcon="reaccion" color="primary" class="icon-elements-view icon-list" ></md-icon>
-                            <span>{{getAmountReactions(protein)}}</span>
-                        </div>
-
-
-                    </div>
-
-
-
-                </md-card>
-
-    </div> -->
