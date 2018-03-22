@@ -2,7 +2,7 @@
  * Created by murmu on 18/09/17.
  */
 
-import {Component, OnInit, OnDestroy} from "@angular/core";
+import {Component, OnInit, OnDestroy, ChangeDetectorRef} from "@angular/core";
 import "rxjs/add/observable/of";
 import "rxjs/add/operator/map";
 import {ActivatedRoute, Router, NavigationStart} from "@angular/router";
@@ -26,14 +26,22 @@ export class ProteinListComponent implements OnInit{
     private proteins = [];
     private subscription: Subscription;
 
-    constructor(private route:ActivatedRoute, private proteinDataService:ProteinDataService, private router:Router){
+    constructor(private route:ActivatedRoute, private proteinDataService:ProteinDataService, private router:Router, private changeDetector : ChangeDetectorRef){
       this.subscription = this.proteinDataService.getSearchResult()
       .subscribe(proteins => {
         this.proteins = proteins;
+        this.isEmptyList = this.proteins.length < 1;
+        this.changeDetector.detectChanges()
       });
     }
 
     ngOnInit(){}
+
+    getAllProteins = () => {
+      this.proteinDataService.getAll();
+      this.isEmptyList = false;
+      this.changeDetector.detectChanges();
+    }
 
     ngOnDestroy() {
       this.subscription.unsubscribe();

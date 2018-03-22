@@ -13,11 +13,12 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.initHeader();
+    this.initMaterializeCssComponents();
   }
 
-  initHeader() {
+  initMaterializeCssComponents() {
     $('.button-collapse').sideNav();
+    $(".dropdown-button").dropdown();
   }
 
 }

@@ -3,12 +3,15 @@
     <div class="col s1"></div>
     <div class="col s9">
       <div class="search-wrapper">
-        <input #search placeholder="Search proteins by name or uniprot" (keyup.enter)="enter(search.value)">
+        <input [(ngModel)]="textSearch" placeholder="Search proteins by name or uniprot" (keyup.enter)="search()">
       </div>
     </div>
     <div class="col s1">
-      <a class="btn-floating" (click)="enter(search.value)"><i class="material-icons">search</i></a>
+      <a class="btn-floating" (click)="search()"><i class="material-icons">search</i></a>
     </div>
     <div class="col s1"></div>
+  </div>
+  <div class="row center">
+    <a class="waves-effect waves-light btn-large" (click)="getAllProteins()">See all the proteins</a>
   </div>
 </div>

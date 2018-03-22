@@ -12,6 +12,11 @@
 }
 
 .img-small {
-  width: 10%;
-  height: 10%;
+  width: 15%;
+  height: 15%;
+}
+
+.img-medium {
+  width: 35%;
+  height: 35%;
 }
