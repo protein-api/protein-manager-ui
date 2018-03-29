@@ -3,12 +3,6 @@ import {NgModule} from "@angular/core";
 
 import {AppComponent} from "./app.component";
 
-// import {
-//   MdButtonModule, MdCardModule, MdExpansionModule, MdIconModule, MdIconRegistry, MdInputModule, MdListModule,
-//   MdTableModule,
-//   MdTabsModule,
-//   MdToolbarModule, MdTooltipModule
-// } from "@angular/material";
 import {AppRoutingModule} from "./app.routing";
 import {HomeComponent} from "./components/home/home.component";
 import {SearchComponent} from "./components/search/search.component";
@@ -32,7 +26,7 @@ import { Footer2Component } from './components/footer2/footer2.component';
 import { ProteinCardComponent } from './components/protein-card/protein-card.component';
 import { ProteinFullViewComponent } from './components/protein-full-view/protein-full-view.component';
 import { ReactionCardComponent } from './components/reaction-card/reaction-card.component';
-
+import { MaterializeModule } from 'angular2-materialize';
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
 {
@@ -65,13 +59,16 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    MaterializeModule
   ],
   providers: [
-      ErrorNotifierService,
-      ProteinDataService,
-      EnvironmentService,
-    {provide: RequestOptions, useClass: Configuration},
+    ErrorNotifierService,
+    ProteinDataService,
+    EnvironmentService,
+    {
+      provide: RequestOptions, useClass: Configuration
+    },
     {
       provide: Http,
       useFactory: useFactory,

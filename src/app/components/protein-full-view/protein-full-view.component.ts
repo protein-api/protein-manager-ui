@@ -30,6 +30,7 @@ export class ProteinFullViewComponent implements OnInit {
     this.proteinDataService.getSearchResultById()
       .subscribe( result => {
           this.protein = result;
+          console.log(this.protein);
         });
   }
 
