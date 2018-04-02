@@ -12,7 +12,7 @@ export class ProteinDataService{
   constructor(private http:Http){}
 
   searchById(proteinaId:string){
-    this.http.get('/api/proteins/get/' + proteinaId)
+    this.http.get('/api/proteins/' + proteinaId)
     .map((r:any) => r.json())
     .subscribe(result => {
       this.proteinSubject.next(result);
