@@ -31,7 +31,7 @@ export class ProteinListComponent implements OnInit{
       .subscribe(proteins => {
         this.proteins = proteins;
         this.isEmptyList = this.proteins.length < 1;
-        this.changeDetector.detectChanges()
+        this.changeDetector.detectChanges();
       });
     }
 

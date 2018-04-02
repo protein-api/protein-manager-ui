@@ -19,6 +19,7 @@ export class ProteinFullViewComponent implements OnInit {
   private isEdit:boolean;
   private proteinId:string;
   private showDois:boolean = false;
+  private structures:any[] = [];
 
   @Input() protein: any;
 
@@ -30,7 +31,7 @@ export class ProteinFullViewComponent implements OnInit {
     this.proteinDataService.getSearchResultById()
       .subscribe( result => {
           this.protein = result;
-          console.log(this.protein);
+          this.structures = this.getStructuresList();
         });
   }
 
@@ -38,6 +39,13 @@ export class ProteinFullViewComponent implements OnInit {
   ngOnInit() {
     this.initializeCollapsible();
     this.getProtein();
+  }
+
+  getStructuresList = () => {
+    if (this.protein.estructurasPDB[0]) {
+      return this.protein.estructurasPDB[0].codigo.split(",");;
+    }
+    return [];
   }
 
   getProtein(){

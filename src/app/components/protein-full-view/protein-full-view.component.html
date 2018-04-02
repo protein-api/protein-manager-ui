@@ -41,7 +41,13 @@
         <p class="flow-text">Structures</p>
       </div>
       <div class="collapsible-body">
-        <span>Lorem ipsum dolor sit amet.</span>
+
+        <div class="row" >
+          <div *ngFor="let structure of structures">
+            <app-structure-card [structure]="structure"></app-structure-card>
+          </div>
+        </div>
+
       </div>
     </li>
 
