@@ -28,6 +28,10 @@ import { ProteinFullViewComponent } from './components/protein-full-view/protein
 import { ReactionCardComponent } from './components/reaction-card/reaction-card.component';
 import { MaterializeModule } from 'angular2-materialize';
 import { StructureCardComponent } from './components/structure-card/structure-card.component';
+import { StatsComponent } from './components/stats/stats.component';
+import { TutorialComponent } from './components/tutorial/tutorial.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
 {
@@ -52,7 +56,11 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     ProteinCardComponent,
     ProteinFullViewComponent,
     ReactionCardComponent,
-    StructureCardComponent
+    StructureCardComponent,
+    StatsComponent,
+    TutorialComponent,
+    ContactComponent,
+    AboutComponent
 
   ],
   imports: [
