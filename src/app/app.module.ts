@@ -26,12 +26,12 @@ import { Footer2Component } from './components/footer2/footer2.component';
 import { ProteinCardComponent } from './components/protein-card/protein-card.component';
 import { ProteinFullViewComponent } from './components/protein-full-view/protein-full-view.component';
 import { ReactionCardComponent } from './components/reaction-card/reaction-card.component';
-import { MaterializeModule } from 'angular2-materialize';
 import { StructureCardComponent } from './components/structure-card/structure-card.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { TutorialComponent } from './components/tutorial/tutorial.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
+import { SequenceViewComponent } from './components/sequence-view/sequence-view.component';
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
 {
@@ -60,7 +60,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     StatsComponent,
     TutorialComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    SequenceViewComponent
 
   ],
   imports: [
@@ -69,8 +70,7 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpModule,
-    MaterializeModule
+    HttpModule
   ],
   providers: [
     ErrorNotifierService,
