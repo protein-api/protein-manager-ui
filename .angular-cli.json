@@ -20,9 +20,11 @@
       "prefix": "app",
       "styles": [
         "../node_modules/materialize-css/dist/css/materialize.css",
-        "styles.scss"
+        "styles.scss",
+        "assets/pViz/pviz-core.css"
       ],
       "scripts": [
+        "assets/pViz/pviz-bundle.min.js",
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/materialize-css/dist/js/materialize.js",
         "../node_modules/materialize-css/js/initial.js",

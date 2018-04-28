@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-declare const jQuery:any;
 declare const $:any;
 
 @Component({
@@ -13,10 +12,12 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
     this.initMaterializeCssComponents();
   }
 
   initMaterializeCssComponents() {
+    console.log($);
     $('.button-collapse').sideNav();
     $(".dropdown-button").dropdown();
   }
