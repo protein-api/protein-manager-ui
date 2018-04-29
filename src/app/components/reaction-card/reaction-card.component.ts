@@ -10,21 +10,20 @@ declare const $:any;
 })
 export class ReactionCardComponent implements OnInit {
 
-  @Input() reaction: any;
+  @Input() reaction: any
 
   constructor() { }
 
   ngOnInit() {
-    $('.modal').modal();
+    $('.modal').modal()
   }
 
   openReactionModal = () => {
-    $('#modal-reaction-' + this.reaction.id).modal('open');
-    console.log(this.reaction);
+    $('#modal-reaction-' + this.reaction.id).modal('open')
   }
 
   closeReactionModal = () => {
-    $('#modal-reaction-' + this.reaction.id).modal('close');
+    $('#modal-reaction-' + this.reaction.id).modal('close')
   }
 
 }
