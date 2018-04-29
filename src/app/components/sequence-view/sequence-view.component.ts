@@ -39,7 +39,7 @@ export class SequenceViewComponent implements OnInit {
     if(protein.sitiosActivo.sitiosActCan) {
       this.getListOfPositions(protein.sitiosActivo.sitiosActCan).forEach( (index) => {
         seqEntry.addFeatures([
-          {category : 'Canonical active site', type : 'bar', start : index, end : index, text : ''}
+          {category : 'Canonical active site', type : 'bar', start : index-1 , end : index-1, text : ''}
         ]);
       })
     }
@@ -47,7 +47,7 @@ export class SequenceViewComponent implements OnInit {
     if (protein.sitiosActivo.sitiosActProm) {
       this.getListOfPositions(protein.sitiosActivo.sitiosActProm).forEach( (index) => {
         seqEntry.addFeatures([
-          {category : 'Promiscuit active site', type : 'bar', start : index, end : index, text : ''}
+          {category : 'Promiscuit active site', type : 'bar', start : index-1, end : index-1, text : ''}
         ]);
       })
     }
