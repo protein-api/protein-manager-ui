@@ -1,8 +1,28 @@
 <div class="col s12 m5 l2">
-  <div class="card-panel red">
+  <div class="card-panel red hand" (click)="openReactionModal()">
     <div class="valign-wrapper">
       <img src="../../assets/icons/structure.svg" class="img-small ico-white">
-      <a href="{{structureLink}}"><span class="white-text somePadding">{{structure}}</span></a>
+      <span class="white-text somePadding">{{structure}}</span>
     </div>
   </div>
+</div>
+
+
+<!-- Modal Structure -->
+<div id="modal-structure-{{structure}}" class="modal">
+  <div class="modal-content">
+    <div class="row">
+      <div class="col s1">
+        <img src="../../assets/icons/structure.svg">
+      </div>
+      <div class="col s10">
+        <h4><a href="{{structureLink}}" target="_blank"><span class=" somePadding">{{structure}}</span></a></h4>
+      </div>
+      <div class="col s1">
+        <a class="modal-action waves-effect waves-green btn-flat"  (click)="closeReactionModal()" ><i class="large material-icons">close</i></a>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div id=viewer class="container"></div>
+    <br>
 </div>

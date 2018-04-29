@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
   }
 
   initMaterializeCssComponents() {
-    console.log($);
     $('.button-collapse').sideNav();
     $(".dropdown-button").dropdown();
   }

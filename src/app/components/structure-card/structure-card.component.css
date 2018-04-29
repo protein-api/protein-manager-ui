@@ -10,3 +10,7 @@
 .somePadding {
   padding: 10px;
 }
+
+.hand {
+  cursor: pointer;
+}

@@ -9,9 +9,6 @@ import {ActivatedRoute, Router, NavigationStart} from "@angular/router";
 import {ProteinDataService} from "../../service/protein.data.srv";
 import { Subscription } from 'rxjs/Subscription';
 
-/**
- * @title Basic table
- */
 @Component({
     selector: 'protein-list',
     styleUrls: ['protein.list.component.scss'],
