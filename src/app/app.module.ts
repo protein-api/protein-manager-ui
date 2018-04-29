@@ -19,8 +19,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ReactionListComponent } from './components/reaction-list/reaction-list.component';
 import { StructrueListComponent } from './components/structrue-list/structrue-list.component';
 import { SequenceFormComponent } from './components/sequence-form/sequence-form.component';
-import { LinListComponent } from './components/lin-list/lin-list.component';
-import {HeaderComponent} from "./components/header/header.component";
+import { LinksComponent } from './components/links/links.component';
+import { HeaderComponent } from "./components/header/header.component";
 import { Home2Component } from './components/home2/home2.component';
 import { Footer2Component } from './components/footer2/footer2.component';
 import { ProteinCardComponent } from './components/protein-card/protein-card.component';
@@ -50,7 +50,7 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     ReactionListComponent,
     StructrueListComponent,
     SequenceFormComponent,
-    LinListComponent,
+    LinksComponent,
     Home2Component,
     Footer2Component,
     ProteinCardComponent,

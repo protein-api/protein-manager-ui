@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LinListComponent } from './lin-list.component';
+import { LinksComponent } from './liks.component';
 
-describe('LinListComponent', () => {
-  let component: LinListComponent;
-  let fixture: ComponentFixture<LinListComponent>;
+describe('LinksComponent', () => {
+  let component: LinksComponent;
+  let fixture: ComponentFixture<LinksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -14,7 +14,7 @@ describe('LinListComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LinListComponent);
+    fixture = TestBed.createComponent(LinksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

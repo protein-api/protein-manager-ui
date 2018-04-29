@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { ProteinDataService } from "../../service/protein.data.srv";
 
+declare const $:any;
+
 @Component({
     selector:'search-component',
     templateUrl:'./search.component.html',
@@ -15,7 +17,9 @@ export class SearchComponent implements OnInit{
 
   textSearch: string;
 
-  ngOnInit() {}
+  ngOnInit() {
+    $('select').material_select()
+  }
 
   backClick(){}
 

@@ -1,6 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col s1"></div>
+    <div class="col s2">
+      <select>
+        <option value="" disabled selected>Search by:</option>
+        <option value="1">Protein</option>
+        <option value="2">Reaction</option>
+        <option value="3">Organism</option>
+      </select>
+    </div>
     <div class="col s9">
       <div class="search-wrapper">
         <input [(ngModel)]="textSearch" placeholder="Search proteins by name or uniprot" (keyup.enter)="search()">
@@ -9,7 +16,6 @@
     <div class="col s1">
       <a class="btn-floating" (click)="search()"><i class="material-icons">search</i></a>
     </div>
-    <div class="col s1"></div>
   </div>
   <div class="row center">
     <a class="waves-effect waves-light btn-large" (click)="getAllProteins()">See all the proteins</a>
