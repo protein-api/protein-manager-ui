@@ -53,6 +53,7 @@ export class StructureCardComponent implements OnInit {
       // homocysteine and the inhibitor ribavirin-5' triphosphate. They have
       // the three-letter codes SAH and RVP, respectively. Let's display them
       // with balls and sticks.
+      viewer.autoZoom()
       const ligands = structure.select({ rnames : ['SAH', 'RVP'] })
       viewer.ballsAndSticks('ligands', ligands)
       viewer.centerOn(structure)
