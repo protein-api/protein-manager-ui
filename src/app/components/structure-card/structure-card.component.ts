@@ -15,24 +15,11 @@ export class StructureCardComponent implements OnInit {
   @Input() structure: any;
   private structureLink: string;
 
-  constructor() {
-
-  }
+  constructor() {}
 
   ngOnInit() {
-    console.log(pv)
     $('.modal').modal()
     this.structureLink = this.getSructureLink(this.structure)
-
-    const options = {
-      width: 600,
-      height: 600,
-      antialias: true,
-      quality : 'medium'
-  }
-  
-  const viewer = pv.Viewer(document.getElementById('viewer'), options)
-  this.loadPdb(viewer, "1r6a")
   }
 
   getSructureLink = (structure) => {
@@ -41,7 +28,19 @@ export class StructureCardComponent implements OnInit {
     return link + struc
   }
 
-  openReactionModal = () => $('#modal-structure-' + this.structure).modal('open')
+  openReactionModal = () => {
+    $('#modal-structure-' + this.structure).modal('open')
+
+    const options = {
+      width: 600,
+      height: 600,
+      antialias: true,
+      quality : 'medium'
+    }
+    $( '#viewer-'+this.structure ).empty();
+    const viewer = pv.Viewer(document.getElementById('viewer-'+this.structure), options)
+    this.loadPdb(viewer, "1r6a")
+  }
 
   closeReactionModal = () => $('#modal-structure-' + this.structure).modal('close')
 
@@ -57,7 +56,7 @@ export class StructureCardComponent implements OnInit {
       const ligands = structure.select({ rnames : ['SAH', 'RVP'] })
       viewer.ballsAndSticks('ligands', ligands)
       viewer.centerOn(structure)
-  })
+    })
   }
 
 }
