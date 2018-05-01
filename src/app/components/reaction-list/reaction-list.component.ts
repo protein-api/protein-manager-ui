@@ -9,7 +9,7 @@ import { Protein } from "../model/model";
 })
 export class ReactionListComponent implements OnInit {
 
-  @Input() list =[]
+  @Input() list = []
   public protein:Protein;
 
   constructor(private proteinDataService:ProteinDataService) {

@@ -1,26 +1,26 @@
-<table class="highlight">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Name</th>
-      <th>Code</th>
-      <th>Link</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let link of links">
-      <td>{{link.tipo}}</td>
-      <td>{{link.nombre}}</td>
-      <td>{{link.codigo}}</td>
-      <td>
-        <a href="{{link.link}}" target="_blank">
-          <div style="height:100%;width:100%">
-            {{link.link}}
-          </div>
-        </a>
-      </td>
-    </tr>
-
-  </tbody>
-</table>
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3"><a class="active" href="#test1">doi</a></li>
+      <li class="tab col s3"><a href="#test2">molec func</a></li>
+      <li class="tab col s3"><a href="#test3">codnas</a></li>
+      <li class="tab col s3"><a href="#test4">pfam</a></li>
+    </ul>
+  </div>
+  <div id="test1" class="col s12">
+      <br>
+      <app-links-table *ngIf="links" [links]="getLinks('doi')" ></app-links-table>
+  </div>
+  <div id="test2" class="col s12">
+        <br>
+      <app-links-table *ngIf="links" [links]="getLinks('molec_func')" ></app-links-table>
+  </div>
+  <div id="test3" class="col s12">
+      <br>
+      <app-links-table *ngIf="links" [links]="getLinks('codnas')" ></app-links-table>
+  </div>
+  <div id="test4" class="col s12">
+      <br>
+      <app-links-table *ngIf="links" [links]="getLinks('pfam')" ></app-links-table>
+  </div>
+</div>

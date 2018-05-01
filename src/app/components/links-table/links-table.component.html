@@ -1,0 +1,25 @@
+<table class="striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let link of links">
+      <td>{{link.nombre}}</td>
+      <td>{{link.codigo}}</td>
+      <td>
+        <a href="{{link.link}}" target="_blank">
+          <div style="height:100%;width:100%">
+            {{link.link}}
+          </div>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+

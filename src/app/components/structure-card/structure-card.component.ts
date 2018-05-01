@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core'
+import {MaterializeDirective} from "angular2-materialize"
 
 declare const jQuery:any
 declare const $:any
@@ -14,11 +15,15 @@ export class StructureCardComponent implements OnInit {
 
   @Input() structure: any;
   private structureLink: string;
+  private viewer:any
+  private pvStructure:any
 
   constructor() {}
 
   ngOnInit() {
     $('.modal').modal()
+    $('.dropdown-button').dropdown()
+    $('#dropdown1').dropdown()
     this.structureLink = this.getSructureLink(this.structure)
   }
 
@@ -38,26 +43,52 @@ export class StructureCardComponent implements OnInit {
       quality : 'medium'
     }
     $( '#viewer-'+this.structure ).empty();
-    const viewer = pv.Viewer(document.getElementById('viewer-'+this.structure), options)
-    this.loadPdb(viewer, "1r6a")
+    this.viewer = pv.Viewer(document.getElementById('viewer-'+this.structure), options)
+    this.loadPdb("1r6a")
   }
 
   closeReactionModal = () => $('#modal-structure-' + this.structure).modal('close')
 
-  loadPdb = (viewer, pdbName) => {
+  loadPdb = (pdbName) => {
     pv.io.fetchPdb('/assets/pv/pdbs/' + pdbName + '.pdb', (structure) => {
       // display the protein as cartoon, coloring the secondary structure
       // elements in a rainbow gradient.
-      viewer.cartoon('protein', structure, { color : pv.color.ssSuccession() })
+      this.viewer.cartoon('protein', structure, { color : pv.color.ssSuccession() })
       // there are two ligands in the structure, the co-factor S-adenosyl
       // homocysteine and the inhibitor ribavirin-5' triphosphate. They have
       // the three-letter codes SAH and RVP, respectively. Let's display them
       // with balls and sticks.
-      viewer.autoZoom()
+      this.viewer.autoZoom()
       const ligands = structure.select({ rnames : ['SAH', 'RVP'] })
-      viewer.ballsAndSticks('ligands', ligands)
-      viewer.centerOn(structure)
+      this.viewer.ballsAndSticks('ligands', ligands)
+      this.viewer.centerOn(structure)
+      this.pvStructure = structure
     })
+  }
+
+  autoZoom = () => this.viewer.autoZoom()
+
+  lines = () => {
+    console.log("LINES")
+    this.viewer.clear()
+    this.viewer.lines('structure', this.pvStructure)
+  }
+
+  cartoon = () => {
+    this.viewer.clear()
+    this.viewer.cartoon('structure', this.pvStructure, { color: pv.color.ssSuccession() })
+  }
+  lineTrace = () => {
+    this.viewer.clear()
+    this.viewer.lineTrace('structure', this.pvStructure)
+  }
+  tube = () => {
+    this.viewer.clear()
+    this.viewer.tube('structure', this.pvStructure)
+  }
+  trace = () => {
+    this.viewer.clear()
+    this.viewer.trace('structure', this.pvStructure)
   }
 
 }
