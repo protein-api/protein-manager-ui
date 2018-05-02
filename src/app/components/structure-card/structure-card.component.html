@@ -7,7 +7,6 @@
   </div>
 </div>
 
-
 <!-- Modal Structure -->
 <div id="modal-structure-{{structure}}" class="modal">
   <div class="modal-content">
@@ -25,19 +24,19 @@
     <div class="divider"></div>
     <div id="viewer-{{structure}}" class="container"></div>
     <div>
-      <a class="btn-floating btn waves-effect waves-light" (click)="autoZoom()" title="Center"><i class="material-icons">zoom_out_map</i></a>
+      <a class="btn-floating btn waves-effect waves-light" (click)="autoZoom()" title="Center"><i class="material-icons">center_focus_strong</i></a>
       
-      <a class="btn-floating btn waves-effect waves-light" title="Rotate"><i class="material-icons">rotate_right</i></a>
+      <a class="btn-floating btn waves-effect waves-light" (click)="rotate()" title="Rotate"><i class="material-icons">rotate_right</i></a>
 
       <!-- Dropdown Trigger -->
-      <a materialize="dropdown" class='dropdown-button btn' data-activates='dropdown1'>Style</a>
+      <a materialize="dropdown" class='dropdown-button btn' data-activates='dropdown1'><i class="material-icons right">arrow_drop_down</i>Style</a>
       <!-- Dropdown Structure -->
       <ul id='dropdown1' class='dropdown-content'>
-        <li><a>Lines</a></li>
-        <li><a>Cartoon</a></li>
-        <li><a>Line Trace</a></li>
-        <li><a>Tube</a></li>
-        <li><a>Trace</a></li>
+        <li (click)="lines()"><a>Lines</a></li>
+        <li (click)="cartoon()"><a>Cartoon</a></li>
+        <li (click)="lineTrace()"><a>Line Trace</a></li>
+        <li (click)="tube()"><a>Tube</a></li>
+        <li (click)="trace()"><a>Trace</a></li>
       </ul>
       
     </div>

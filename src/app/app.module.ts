@@ -18,7 +18,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ProteinFormComponent } from "./components/protein-form/protein.form.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ReactionListComponent } from './components/reaction-list/reaction-list.component';
-import { StructrueListComponent } from './components/structrue-list/structrue-list.component';
 import { SequenceFormComponent } from './components/sequence-form/sequence-form.component';
 import { LinksComponent } from './components/links/links.component';
 import { LinksTableComponent } from './components/links-table/links-table.component';
@@ -49,7 +48,6 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     ProteinListComponent,
     ProteinFormComponent,
     ReactionListComponent,
-    StructrueListComponent,
     SequenceFormComponent,
     LinksComponent,
     LinksTableComponent,

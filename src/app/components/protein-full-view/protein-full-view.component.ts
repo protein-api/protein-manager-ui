@@ -37,35 +37,16 @@ export class ProteinFullViewComponent implements OnInit {
 
 
   ngOnInit() {
-    this.initializeCollapsible();
+    $('.collapsible').collapsible()
     this.getProtein();
   }
 
-  getStructuresList = () => {
-    if (this.protein.estructurasPDB[0]) {
-      return this.protein.estructurasPDB[0].codigo.split(",");;
-    }
-    return [];
-  }
+  getStructuresList = () => this.protein.estructurasPDB[0] ? this.protein.estructurasPDB[0].codigo.split(",") : []
 
-  getProtein(){
-    if(this.proteinId) {
-      this.proteinDataService.searchById(this.proteinId);
-    }
-  }
+  getProtein = () => { if(this.proteinId) this.proteinDataService.searchById(this.proteinId) }
 
-  splitSequence(sequence:string){
-    return sequence?sequence.split(" "):[];
-  }
+  splitSequence = (sequence:string) => sequence ? sequence.split(" ") : []
 
-  goBack() {
-    this._location.back();
-  }
-
-  initializeCollapsible() {
-    $(document).ready(function(){
-      $('.collapsible').collapsible();
-    });
-  }
+  goBack = () => this._location.back()
 
 }

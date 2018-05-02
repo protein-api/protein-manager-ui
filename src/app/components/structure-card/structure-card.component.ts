@@ -22,8 +22,6 @@ export class StructureCardComponent implements OnInit {
 
   ngOnInit() {
     $('.modal').modal()
-    $('.dropdown-button').dropdown()
-    $('#dropdown1').dropdown()
     this.structureLink = this.getSructureLink(this.structure)
   }
 
@@ -42,7 +40,7 @@ export class StructureCardComponent implements OnInit {
       antialias: true,
       quality : 'medium'
     }
-    $( '#viewer-'+this.structure ).empty();
+    $('#viewer-'+this.structure).empty();
     this.viewer = pv.Viewer(document.getElementById('viewer-'+this.structure), options)
     this.loadPdb("1r6a")
   }
@@ -68,8 +66,9 @@ export class StructureCardComponent implements OnInit {
 
   autoZoom = () => this.viewer.autoZoom()
 
+  rotate = () => this.viewer.rotate()
+
   lines = () => {
-    console.log("LINES")
     this.viewer.clear()
     this.viewer.lines('structure', this.pvStructure)
   }
