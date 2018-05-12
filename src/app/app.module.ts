@@ -32,6 +32,7 @@ import { TutorialComponent } from './components/tutorial/tutorial.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { SequenceViewComponent } from './components/sequence-view/sequence-view.component';
+import { ProVizViewComponent } from './components/proviz-view/proviz-view.component';
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
 {
@@ -60,8 +61,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     TutorialComponent,
     ContactComponent,
     AboutComponent,
-    SequenceViewComponent
-
+    SequenceViewComponent,
+    ProVizViewComponent
   ],
   imports: [
     FormsModule,
