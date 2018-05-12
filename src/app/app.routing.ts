@@ -8,6 +8,7 @@ import {StatsComponent} from "./components/stats/stats.component";
 import {TutorialComponent} from "./components/tutorial/tutorial.component";
 import {ContactComponent} from "./components/contact/contact.component";
 import {AboutComponent} from "./components/about/about.component";
+import {FactsComponent} from "./components/facts/facts.component";
 
 
 // Routing
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
     { path: 'tutorial', component: TutorialComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
+    { path: 'facts', component: FactsComponent },
     { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ]
 

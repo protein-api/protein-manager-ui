@@ -33,6 +33,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { SequenceViewComponent } from './components/sequence-view/sequence-view.component';
 import { ProVizViewComponent } from './components/proviz-view/proviz-view.component';
+import { FactsComponent } from "./components/facts/facts.component";
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
 {
@@ -62,7 +63,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     ContactComponent,
     AboutComponent,
     SequenceViewComponent,
-    ProVizViewComponent
+    ProVizViewComponent,
+    FactsComponent
   ],
   imports: [
     FormsModule,
