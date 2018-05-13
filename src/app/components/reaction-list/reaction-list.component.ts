@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from "@angular/core";
-import { ProteinDataService } from "../../service/protein.data.srv";
-import { Protein } from "../model/model";
+import {Component, Input, OnInit} from "@angular/core"
+import { ProteinDataService } from "../../service/protein.data.srv"
+import { Protein } from "../model/model"
 
 @Component({
   selector: 'app-reaction-list',
@@ -16,19 +16,11 @@ export class ReactionListComponent implements OnInit {
     this.protein = new Protein();
     this.proteinDataService.getSearchResultById()
       .subscribe( result => {
-          this.protein = result;
+          this.protein = result
+          console.log(this.protein)
         });
   }
 
-  ngOnInit() {
-  }
-
-  getStringValue(value):string{
-    return value?value:'-'
-  }
-
-  clickMolecule(url:string){
-    window.open(url);
-  }
+  ngOnInit() {}
 
 }

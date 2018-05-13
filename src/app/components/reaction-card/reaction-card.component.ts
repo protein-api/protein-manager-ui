@@ -16,6 +16,11 @@ export class ReactionCardComponent implements OnInit {
 
   ngOnInit() {
     $('.modal').modal()
+    console.log(this.reaction)
+  }
+
+  getMolecules = (type) => {
+    console.log(this.reaction)
   }
 
   openReactionModal = () => {
@@ -25,5 +30,7 @@ export class ReactionCardComponent implements OnInit {
   closeReactionModal = () => {
     $('#modal-reaction-' + this.reaction.id).modal('close')
   }
+
+  cineticType = (type) => (type === "REACTIVO" ? "Reactive" : "Product")
 
 }

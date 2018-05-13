@@ -1,0 +1,25 @@
+<table class="striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let molecule of molecules">
+      <td>{{molecule.nombre}}</td>
+      <td>{{molecule.codigo}}</td>
+      <td>
+        <a href="{{molecule.link}}" target="_blank">
+          <div style="height:100%;width:100%">
+            {{molecule.link}}
+          </div>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+

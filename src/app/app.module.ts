@@ -34,6 +34,7 @@ import { AboutComponent } from './components/about/about.component';
 import { SequenceViewComponent } from './components/sequence-view/sequence-view.component';
 import { ProVizViewComponent } from './components/proviz-view/proviz-view.component';
 import { FactsComponent } from "./components/facts/facts.component";
+import { MoleculesTableComponent } from "./components/molecules-table/molecules-table.component";
 
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
 {
@@ -64,7 +65,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     AboutComponent,
     SequenceViewComponent,
     ProVizViewComponent,
-    FactsComponent
+    FactsComponent,
+    MoleculesTableComponent
   ],
   imports: [
     FormsModule,
