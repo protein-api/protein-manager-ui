@@ -1,7 +1,6 @@
 <body>
   <div class="container">
     <div class="row">
-
       <div class="col s12">
       <h5 class="left titulo">
         <blockquote>Searching promiscuous proteins in ProtMiscuity</blockquote>
@@ -21,11 +20,15 @@
 <div class="col s12">
   <div class="col s6">
   <p style="font-size: 18px">The search is by default set by protein or Uniprot id. The user can write UniProt id or the protein name in the the field and click the search button.</p>
+  <div class="row margin-right">
+    <a class="waves-effect waves-light btn-large red" (click)="getAllProteins()" href='../proteins'>Search a protein</a>
+  </div>
 </div>
 <div class="col s6">
   <img src="../../assets/tutorial_img/img1.png" class="img-medium" style="width:100%">
 </div>
 </div>
+
 
 <div class="col s12">
 <h5>
@@ -58,6 +61,9 @@
 <div class="col s12">
 <div class="col s6">
 <p style="font-size: 18px">All the information is collapsed and listed in five items in which the user can search for the specific information of interest: general information, sequence and active sites information, sctructural information and visualization and conformational dyversity and external links.</p>
+<div class="row margin-right">
+  <a class="waves-effect waves-light btn-large red" (click)="getAllProteins()" href='../protein/1'>Example</a>
+</div>
 </div>
 <div class="col s6">
 <img src="../../assets/tutorial_img/img3.png" class="img-medium" style="width:100%">
@@ -72,10 +78,68 @@
 
 <div class="col s12">
 <div class="col s6">
-<p style="font-size: 18px">All the information is collapsed and listed in five items in which the user can search for the specific information of interest: general information, sequence and active sites information, sctructural information and visualization and conformational dyversity and external links.</p>
+<p style="font-size: 18px">The general information section includes: the protein's common name, the uniprot and the kegg ids, the organism from which the protein comes from and the protein family name.</p>
+<div class="row margin-right">
+  <a class="waves-effect waves-light btn-large red" (click)="getAllProteins()" href='../protein/1'>Example</a>
+</div>
 </div>
 <div class="col s6">
-<img src="../../assets/tutorial_img/img3.png" class="img-medium" style="width:100%">
+<img src="../../assets/tutorial_img/img4.png" class="img-medium" style="width:100%">
+</div>
+</div>
+
+<div class="col s12">
+<h5>
+<blockquote>Sequence and active sites</blockquote>
+</h5>
+</div>
+
+<div class="col s12">
+<div class="col s6">
+<p style="font-size: 18px">This section has all the information recruided about canonic and promiscuous actives sites. This information is contextualized with the impormation provided by ProViz about disorder, PDB mapping,pFAM and MobiDB data base.</p>
+<div class="row margin-right">
+  <a class="waves-effect waves-light btn-large red" (click)="getAllProteins()" href='../protein/1'>Example</a>
+</div>
+</div>
+<div class="col s6">
+<img src="../../assets/tutorial_img/img5.png" class="img-medium" style="width:100%">
+</div>
+</div>
+
+
+<div class="col s12">
+<h5>
+<blockquote>Structures visualization</blockquote>
+</h5>
+</div>
+
+<div class="col s12">
+<div class="col s6">
+<p style="font-size: 18px">Structural visualization of all PDB related with the protein of interest. All the PDBs are represented in clckable cards. The user can acces the visualizator by clicking on the cards and customize the view by selecting the style.</p>
+<div class="row margin-right">
+  <a class="waves-effect waves-light btn-large red" (click)="getAllProteins()" href='../protein/1'>Example</a>
+</div>
+</div>
+<div class="col s6">
+<img src="../../assets/tutorial_img/img6.png" class="img-medium" style="width:100%">
+</div>
+</div>
+
+<div class="col s12">
+<h5>
+<blockquote>Conformational information and external links</blockquote>
+</h5>
+</div>
+
+<div class="col s12">
+<div class="col s6">
+<p style="font-size: 18px">ProtMiscuity provides conformational dyversity information by the relation between the protein searched and CoDNAs databaes.</p>
+<div class="row margin-right">
+  <a class="waves-effect waves-light btn-large red" (click)="getAllProteins()" href='../protein/1'>Example</a>
+</div>
+</div>
+<div class="col s6">
+<img src="../../assets/tutorial_img/img7.png" class="img-medium" style="width:100%">
 </div>
 </div>
 
