@@ -1,6 +1,10 @@
 h5{
   color:#ef5350;
 }
+p{
+  text-align: justify;
+}
+
 ul li {
         list-style-type: circle
     }

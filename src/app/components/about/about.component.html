@@ -1,3 +1,60 @@
-<p>
-  about works!
-</p>
+<body>
+
+  <div class="container">
+    <div class="row">
+
+        <div class="col s12">
+          <h5 style="color:#616161">
+            <blockquote>About</blockquote>
+          </h5>
+          <ul>
+            <li style="font-size: 18px;margin-left:25px"><a href="../about#part1">ProtMiscuity</a></li>
+            <li style="font-size: 18px;margin-left:25px"><a href="../about#part2">Implementation</a></li>
+            <li style="font-size: 18px;margin-left:25px"><a href="../about#part3">Example</a></li>
+            <li style="font-size: 18px;margin-left:25px"><a href="../about#part4">A bit more about Promiscuity</a></li>
+          </ul>
+        </div>
+
+        <div class="col s12">
+          <h5 style="color:#616161" id="part1">
+            <blockquote>ProtMiscuity</blockquote>
+          </h5>
+          <p> ProtMiscuity is a well curated database of promiscuous proteins that aims to centralize our current knowledge of the promiscuity phenomena. The collection of protein data was recruited from bibliography and extensively linked with other databases with structural, functional and conformational information.
+ProtMiscuity database provides a useful protein dataset with for exploring new possible catalytic activities or substrates, as well as complete information for exploring the relationship between structure and function for the development of new predictions tools.</p>
+<p>ProtMiscuity can be browsed by the protein name or <a href="http://www.uniprot.org/">Uniprot</a> id, or through the information related with its canonical and promiscuous activities represented by EC numbers. Functional information is linked with structural and conformational information available in <a href='https://www.rcsb.org/'>PDB</a> and <a href='http://ufq.unq.edu.ar/codnas/index.php'>CoDNaS</a> databases. Users can get protein information by searching with their names or Uniprot codes, or looking for the substrates and products related with them. A typical query such as the protein name retrieves general information about its family name, source organism, the number of promiscuous  and canonical reactions in which it is involved and the number of structures related.</p>
+<p>ProtMiscuity database provides a useful protein dataset with for exploring new possible catalytic activities or substrates, as well as complete information for exploring the relationship between structure and function for the development of new predictions tools.</p>
+        </div>
+
+        <div class="col s12">
+          <h5 style="color:#616161" id="part2">
+            <blockquote>Implementation</blockquote>
+          </h5>
+          <p>
+            The database was developed through the implementation of web-scraping and text mining techniques using standard libraries in the programming language Python. More than 500 scientific publications were thus recruited from the different databases and scientific journals websites, which were then inspected manually for their relevance to protein promiscuity. 301 publications were finally selected, based on text criteria, and they were extensively revised to extract the important data for the database. From this process we obtained a total of 65 promiscuous proteins with one or more characterized promiscuous activities, corresponding to 2480 PDB structures from 42 different organisms. Reactions, both promiscuous and canonical, were characterized by information available in the literature: substrates, products, Km, Kcat, active site definition and reaction conditions. Likewise, substrates and products related to each reaction described were linked to the information available in PDB Ligand Expo (Sitzmann et al. 2012) and PubChem (Kim et al. 2016) to obtain possible ligands with chemical similarity. This allows the user to explore alternatives for future experimental and industrial applications, biotechnological and drug design. In order to provide the users with conformational as well as functional information, each protein was linked to other databases such as PDB (Touw et al. 2015), CoDNaS (Monzon et al. 2016), KEGG (Tanabe and Kanehisa 2012), Uniprot (Pundir et al. 2017), Catalytic Site Atlas (Furnham et al. 2014) and QuickGo (Binns et al. 2009). The web app implemented in HTML, CSS, JavaScript, Angular4 and Node supports multiple devices.
+          </p>
+        </div>
+
+        <div class="col s12">
+          <h5 style="color:#616161" id="part3">
+            <blockquote>Example</blockquote>
+          </h5>
+          <p>
+            The <a href="http://www.uniprot.org/uniprot/P02768">Human serum albumin</a> is the most abundant blood protein, and also a <a href="../protein/2">very studied</a> promiscuous protein. The Human serum albuimin has a good binding capacity for water, Ca(2+), Na(+), K(+), fatty acids, hormones, bilirubin and drugs. Its main function is the regulation of the colloidal osmotic pressure of blood. Major zinc transporter in plasma, typically binds about 80% of all plasma zinc. In <a href="http://ufq.unq.edu.ar/codnas/retrieve.php?type=main&secure_pass=1526674254270&search=P02768">CoDNaS</a> has 138 conformers with an RMSD average of 1.84.
+          </p>
+          <div class='col6'>
+          <!-- Embed Web3DMol, use HTML iframe -->
+         <iframe width=100% height=100% src="http://web3dmol.duapp.com/?id=1ao6" frameborder=0 allowfullscreen></iframe>
+       </div>
+
+        </div>
+
+        <div class="col s12">
+          <h5 style="color:#616161" id="part4">
+            <blockquote>A bit more about Promiscuity</blockquote>
+          </h5>
+
+        </div>
+
+    </div>
+  </div>
+</body>
