@@ -38,8 +38,8 @@
           <div class="col s12">
             <ul class="tabs" id="tab{{getNameWithoutSpaces()}}">
               <li class="tab col s1"></li>
-              <li class="tab col s5" [class.disabled]="!hasMolecules('REACTIVO')"><a class="active" href="#reactive{{getNameWithoutSpaces()}}">reactive ({{amountOfMolecules('REACTIVO')}})</a></li>
-              <li class="tab col s5" [class.disabled]="!hasMolecules('PRODUCTO')"><a href="#product{{getNameWithoutSpaces()}}">product ({{amountOfMolecules('PRODUCTO')}})</a></li>
+              <li class="tab col s5" [class.disabled]="!hasMolecules('REACTIVO')"><a class="active" href="#reactive{{getNameWithoutSpaces()}}">substrates ({{amountOfMolecules('REACTIVO')}})</a></li>
+              <li class="tab col s5" [class.disabled]="!hasMolecules('PRODUCTO')"><a href="#product{{getNameWithoutSpaces()}}">products ({{amountOfMolecules('PRODUCTO')}})</a></li>
               <li class="tab col s1"></li>
             </ul>
           </div>
