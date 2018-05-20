@@ -33,83 +33,71 @@
           <div class="divider"></div>
         </div>
 
-        <!-- <div class="row">
-            <p>Molecules:</p>
+        <p>Molecules:</p>
+        <div class="row">
           <div class="col s12">
-            <ul class="tabs">
-              <li class="tab col s6"><a class="active" href="#pro{{reaction.nombre.substring(0,4)}}">PROMISCUOUS</a></li>
-              <li class="tab col s6"><a href="#can{{reaction.nombre.substring(0,4)}}">CANONIC</a></li>
+            <ul class="tabs" id="tab{{getNameWithoutSpaces()}}">
+              <li class="tab col s1"></li>
+              <li class="tab col s5" [class.disabled]="!hasMolecules('REACTIVO')"><a class="active" href="#reactive{{getNameWithoutSpaces()}}">reactive ({{amountOfMolecules('REACTIVO')}})</a></li>
+              <li class="tab col s5" [class.disabled]="!hasMolecules('PRODUCTO')"><a href="#product{{getNameWithoutSpaces()}}">product ({{amountOfMolecules('PRODUCTO')}})</a></li>
+              <li class="tab col s1"></li>
             </ul>
           </div>
-          <div id="pro{{reaction.nombre.substring(0,4)}}" class="col s12">
+          <div id="reactive{{getNameWithoutSpaces()}}" class="col s12" *ngIf="hasMolecules('REACTIVO')">
               <br>
-              <app-molecules-table></app-molecules-table>
-              <p>list of molecules</p>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>km</th>
+                    <th>Kcat</th>
+                    <th>Kmcat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let cinetica of getMolecules('REACTIVO')">
+                    <td>
+                      <a href="{{cinetica.molecula.link}}" target="_blank">
+                        <div style="height:100%;width:100%">
+                            {{cinetica.molecula.nombre}}
+                        </div>
+                      </a>
+                    </td>
+                    <td>{{cinetica.km}}</td>
+                    <td>{{cinetica.kcat}}</td>
+                    <td>{{cinetica.kmcat}}</td>
+                  </tr>
+                </tbody>
+              </table>
           </div>
-          <div id="can{{reaction.nombre.substring(0,4)}}" class="col s12">
-              <br>
-              <app-molecules-table></app-molecules-table>
-              <p>list alskfdj</p>
-          </div> -->
-
-          <p>Molecules:</p>
-          <table class="striped">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>km</th>
-                <th>Kcat</th>
-                <th>Kmcat</th>
-                <th>Type</th>
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let cinetica of reaction.cineticas">
-                <td>{{cinetica.molecula.nombre}}</td>
-                <td>{{cinetica.km}}</td>
-                <td>{{cinetica.kcat}}</td>
-                <td>{{cinetica.kmcat}}</td>
-                <td>{{cineticType(cinetica.tipo)}}</td>
-                <td>
-                  <a href="{{cinetica.molecula.link}}" target="_blank">
-                    <div style="height:100%;width:100%">
-                      {{cinetica.molecula.link}}
-                    </div>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-
-
-<!--           <div *ngFor="let cinetica of reaction.cineticas">
-              <div class="col l3 m6 s12">
-                <div class="card">
-                  <div class="card-content">
-                    <a href="{{cinetica.molecula.link}}" target="_blank"><span class="card-title">{{cinetica.molecula.nombre}}</span></a>
-                    <div class="row">
-                      <div class="col">
-                        <p class="center-align"><strong>km</strong></p>
-                        <p class="center-align">{{cinetica.km}}</p>
-                      </div>
-                      <div class="col">
-                        <p class="center-align"><strong>kcat</strong></p>
-                        <p class="center-align">{{cinetica.kcat}}</p>
-                      </div>
-                      <div class="col">
-                        <p class="center-align"><strong>kmcat</strong></p>
-                        <p class="center-align">{{cinetica.kmcat}}</p>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <p class="center-align"><strong>Molecule Type:</strong> {{cinetica.tipo}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div> -->
+          <div id="product{{getNameWithoutSpaces()}}" class="col s12" *ngIf="hasMolecules('PRODUCTO')">
+                <br>
+                <table class="striped">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>km</th>
+                      <th>Kcat</th>
+                      <th>Kmcat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cinetica of getMolecules('PRODUCTO')">
+                      <td>
+                        <a href="{{cinetica.molecula.link}}" target="_blank">
+                          <div style="height:100%;width:100%">
+                              {{cinetica.molecula.nombre}}
+                          </div>
+                        </a>
+                      </td>
+                      <td>{{cinetica.km}}</td>
+                      <td>{{cinetica.kcat}}</td>
+                      <td>{{cinetica.kmcat}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
 
       </div>
     </div>

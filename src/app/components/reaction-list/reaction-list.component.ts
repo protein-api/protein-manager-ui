@@ -7,6 +7,7 @@ import { Protein } from "../model/model"
   templateUrl: './reaction-list.component.html',
   styleUrls: ['./reaction-list.component.scss']
 })
+
 export class ReactionListComponent implements OnInit {
 
   @Input() list = []
@@ -17,7 +18,6 @@ export class ReactionListComponent implements OnInit {
     this.proteinDataService.getSearchResultById()
       .subscribe( result => {
           this.protein = result
-          console.log(this.protein)
         });
   }
 

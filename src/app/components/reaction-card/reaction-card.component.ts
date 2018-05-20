@@ -16,12 +16,13 @@ export class ReactionCardComponent implements OnInit {
 
   ngOnInit() {
     $('.modal').modal()
-    console.log(this.reaction)
   }
 
-  getMolecules = (type) => {
-    console.log(this.reaction)
-  }
+  getMolecules = (type) => (this.reaction.cineticas.filter(cinetica => cinetica.tipo === type))
+
+  hasMolecules = (type) => (this.getMolecules(type).length > 0)
+
+  amountOfMolecules = (type) => this.getMolecules(type).length
 
   openReactionModal = () => {
     $('#modal-reaction-' + this.reaction.id).modal('open')
@@ -32,5 +33,7 @@ export class ReactionCardComponent implements OnInit {
   }
 
   cineticType = (type) => (type === "REACTIVO" ? "Reactive" : "Product")
+
+  getNameWithoutSpaces = () => this.reaction.descripcion.replace( /\s/g, "")
 
 }
