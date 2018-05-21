@@ -1,3 +1,42 @@
+<div class="container">
+  <br><br>
+  <div class="row">
+    <div class="col s6">
+        <fusioncharts
+          [width]="dataSourcePie1.width"
+          [height]="dataSourcePie1.height"
+          [type]="dataSourcePie1.type"
+          [dataFormat]="dataSourcePie1.dataFormat"
+          [dataSource]="dataSourcePie1.dataSource">
+      </fusioncharts>
+    </div>
+    <div class="col s6">
+        <fusioncharts
+          [width]="dataSourcePie2.width"
+          [height]="dataSourcePie2.height"
+          [type]="dataSourcePie2.type"
+          [dataFormat]="dataSourcePie2.dataFormat"
+          [dataSource]="dataSourcePie2.dataSource">
+        </fusioncharts>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col s12">
+          <fusioncharts
+              [id]="dataSourceColumnChart.id"
+              [width]="dataSourceColumnChart.width"
+              [height]="dataSourceColumnChart.height"
+              [type]="dataSourceColumnChart.type"
+              [dataFormat]="dataSourceColumnChart.dataFormat"
+              [dataSource]="dataSourceColumnChart.dataSource">
+            </fusioncharts>
+      </div>
+    </div>
+
+</div>
+
+
 
 <body>
   <div class="container">

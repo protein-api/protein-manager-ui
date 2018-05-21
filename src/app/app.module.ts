@@ -36,6 +36,14 @@ import { ProVizViewComponent } from './components/proviz-view/proviz-view.compon
 import { FactsComponent } from "./components/facts/facts.component";
 import { MoleculesTableComponent } from "./components/molecules-table/molecules-table.component";
 
+import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
+import { FusionChartsModule } from 'angular4-fusioncharts';
+
+FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
+
+
 export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, errorNotifier: ErrorNotifierService)
 {
   return new CustomHttp(backend, defaultOptions, errorNotifier);
@@ -75,7 +83,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpModule,
-    MaterializeModule
+    MaterializeModule,
+    FusionChartsModule
   ],
   providers: [
     ErrorNotifierService,
