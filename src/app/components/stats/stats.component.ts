@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core'
 })
 export class StatsComponent implements OnInit {
 
-  
+
   dataSourceColumnChart
+  dataSourceColumnChart2
   dataSourcePie1
   dataSourcePie2
   title = 'Angular4 FusionCharts Sample'
 
-  constructor() { 
+  constructor() {
     this.dataSourceColumnChart = {
       "id": 'chart1',
       "width": '100%',
@@ -22,7 +23,52 @@ export class StatsComponent implements OnInit {
       "dataFormat": 'json',
       "dataSource": {
         "chart": {
-          "caption": "Harry's SuperMart",
+          "baseFont": "Verdana",
+          "baseFontSize": "14",
+          "palettecolors":"#ff5252",
+          "caption": "BarChart 1",
+          "subCaption": "Top 5 stores in last month by revenue",
+          "numberprefix": "$",
+          "theme": "fint"
+        },
+        "data": [
+            {
+                "label": "Bakersfield Central",
+                "value": "880000"
+            },
+            {
+                "label": "Garden Groove harbour",
+                "value": "730000",
+            },
+            {
+                "label": "Los Angeles Topanga",
+                "value": "590000"
+            },
+            {
+                "label": "Compton-Rancho Dom",
+                "value": "520000"
+            },
+            {
+                "label": "Daly City Serramonte",
+                "value": "330000"
+            }
+        ]
+      }
+    }
+
+    this.dataSourceColumnChart2 = {
+      "id": 'chart2',
+      "width": '100%',
+      "height": 400,
+      "type": 'column2d',
+      "dataFormat": 'json',
+      "dataSource": {
+        "chart":
+        {
+          "baseFont": "Verdana",
+          "baseFontSize": "14",
+          "palettecolors":"#ff5252",
+          "caption": "barchat2",
           "subCaption": "Top 5 stores in last month by revenue",
           "numberprefix": "$",
           "theme": "fint"
@@ -59,8 +105,11 @@ export class StatsComponent implements OnInit {
       "dataFormat": 'json',
       "dataSource": {
         "chart": {
-            "caption": "Age profile of website visitors",
-            "subcaption": "Last Year",
+            "baseFont": "Verdana",
+            "baseFontSize": "14",
+            "palettecolors":"#bdbdbd,#212121,FF0000,#ff5252",
+            "caption": "Percentage of proteins with n promiscuous reactions",
+            "subcaption": "Number of promiscuos reactions per protein",
             "startingangle": "120",
             "showlabels": "0",
             "showlegend": "1",
@@ -68,7 +117,7 @@ export class StatsComponent implements OnInit {
             "slicingdistance": "15",
             "showpercentvalues": "1",
             "showpercentintooltip": "0",
-            "plottooltext": "Age group : $label Total visit : $datavalue",
+            "plottooltext": "Number of promiscuos reactions: $label",
             "theme": "ocean"
         },
         "data": [
@@ -99,8 +148,9 @@ export class StatsComponent implements OnInit {
       "dataFormat": 'json',
       "dataSource": {
         "chart": {
-            "caption": "Age profile of website visitors",
-            "subcaption": "Last Year",
+            "caption": "Taxonomy",
+            "subcaption": "Percentage of promicuous proteins per kindom",
+            "palettecolors":"FF0000,#212121,#bdbdbd",
             "startingangle": "120",
             "showlabels": "0",
             "showlegend": "1",
@@ -108,25 +158,21 @@ export class StatsComponent implements OnInit {
             "slicingdistance": "15",
             "showpercentvalues": "1",
             "showpercentintooltip": "0",
-            "plottooltext": "Age group : $label Total visit : $datavalue",
+            "plottooltext": "Kindom: $label",
             "theme": "ocean"
         },
         "data": [
             {
-                "label": "1 reaction",
-                "value": "1250400"
+                "label": "Eukarya",
+                "value": "3750000"
             },
             {
-                "label": "2 reactions",
-                "value": "1463300"
+                "label": "Bacteria",
+                "value": "6042000"
             },
             {
-                "label": "3 reactions",
-                "value": "1050700"
-            },
-            {
-                "label": "4 reactions",
-                "value": "491000"
+                "label": "Archea",
+                "value": "0208400"
             }
         ]
       }

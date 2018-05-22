@@ -2,6 +2,47 @@
   <br><br>
   <div class="row">
     <div class="col s6">
+    <table class="striped">
+      <thead>
+        <tr>
+            Summary
+        </tr>
+      </thead>
+  <tbody>
+    <tr>
+      <td><strong>Total different proteins</strong></td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td><strong>Total different organisms</strong></td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <td><strong>Total different proteins chains linked</strong></td>
+      <td>2480</td>
+    </tr>
+    <tr>
+      <td><strong>Total characterized reactions</strong></td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <td><strong>Total subtrates and products</strong></td>
+      <td>238</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="col s6">
+    <fusioncharts
+      [width]="dataSourcePie2.width"
+      [height]="dataSourcePie2.height"
+      [type]="dataSourcePie2.type"
+      [dataFormat]="dataSourcePie2.dataFormat"
+      [dataSource]="dataSourcePie2.dataSource">
+  </fusioncharts>
+</div>
+
+    <div class="col s6">
         <fusioncharts
           [width]="dataSourcePie1.width"
           [height]="dataSourcePie1.height"
@@ -10,16 +51,7 @@
           [dataSource]="dataSourcePie1.dataSource">
       </fusioncharts>
     </div>
-    <div class="col s6">
-        <fusioncharts
-          [width]="dataSourcePie2.width"
-          [height]="dataSourcePie2.height"
-          [type]="dataSourcePie2.type"
-          [dataFormat]="dataSourcePie2.dataFormat"
-          [dataSource]="dataSourcePie2.dataSource">
-        </fusioncharts>
-    </div>
-  </div>
+
   <br>
   <div class="row">
       <div class="col s12">
@@ -33,6 +65,18 @@
             </fusioncharts>
       </div>
     </div>
+    <div class="row">
+        <div class="col s12">
+            <fusioncharts
+                [id]="dataSourceColumnChart2.id"
+                [width]="dataSourceColumnChart2.width"
+                [height]="dataSourceColumnChart2.height"
+                [type]="dataSourceColumnChart2.type"
+                [dataFormat]="dataSourceColumnChart2.dataFormat"
+                [dataSource]="dataSourceColumnChart2.dataSource">
+              </fusioncharts>
+        </div>
+      </div>
 
 </div>
 
@@ -43,17 +87,13 @@
     <div class="row">
 
       <div class="col s12">
-    <p>
-      ProtMiscuity has a total of 65 promiscuous proteins with one or more characterized promiscuous activities, corresponding to 2480 PDB structures from 43 different organisms.
-    </p>
+
     <!--.Acá va el grafico de los organismos..-->
     <p>
       The two more populated families the AB hydrolase superfamily Lipase and the 4-oxalocrotonate tautomerase family.
     </p>
     <!--.Acá va el grafico de las familias..-->
-    <p>
-      More than 100 reactions were characterized and around 200 different molecules were characterized as promiscuous or canonical reactions and  substrates or products. Substrates and products were linked to PDB Ligand Expo and PubChem to obtain possible ligands with chemical similarity
-    </p>
+
       </div>
 
       </div>
