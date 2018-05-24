@@ -2,7 +2,7 @@
   <br><br>
   <div class="row">
     <div class="col s6">
-    <table class="striped">
+    <table class="striped" style="margin-top:30px">
       <thead>
         <tr>
             Summary
@@ -34,15 +34,17 @@
 </div>
 <div class="col s6">
     <fusioncharts
-      [width]="dataSourcePie2.width"
-      [height]="dataSourcePie2.height"
-      [type]="dataSourcePie2.type"
-      [dataFormat]="dataSourcePie2.dataFormat"
-      [dataSource]="dataSourcePie2.dataSource">
-  </fusioncharts>
+        [id]="dataSourceColumnChart2.id"
+        [width]="dataSourceColumnChart2.width"
+        [height]="dataSourceColumnChart2.height"
+        [type]="dataSourceColumnChart2.type"
+        [dataFormat]="dataSourceColumnChart2.dataFormat"
+        [dataSource]="dataSourceColumnChart2.dataSource">
+      </fusioncharts>
 </div>
 
-    <div class="col s6">
+<div class="row">
+    <div class="col s12" style="margin-top:25px">
         <fusioncharts
           [width]="dataSourcePie1.width"
           [height]="dataSourcePie1.height"
@@ -52,9 +54,20 @@
       </fusioncharts>
     </div>
 
+  </div>
   <br>
   <div class="row">
-      <div class="col s12">
+    <div class="col s6" style="margin-top:25px">
+        <fusioncharts
+          [width]="dataSourcePie2.width"
+          [height]="dataSourcePie2.height"
+          [type]="dataSourcePie2.type"
+          [dataFormat]="dataSourcePie2.dataFormat"
+          [dataSource]="dataSourcePie2.dataSource">
+      </fusioncharts>
+    </div>
+
+      <div class="col s6" style="margin-top:25px">
           <fusioncharts
               [id]="dataSourceColumnChart.id"
               [width]="dataSourceColumnChart.width"
@@ -64,38 +77,7 @@
               [dataSource]="dataSourceColumnChart.dataSource">
             </fusioncharts>
       </div>
+
     </div>
-    <div class="row">
-        <div class="col s12">
-            <fusioncharts
-                [id]="dataSourceColumnChart2.id"
-                [width]="dataSourceColumnChart2.width"
-                [height]="dataSourceColumnChart2.height"
-                [type]="dataSourceColumnChart2.type"
-                [dataFormat]="dataSourceColumnChart2.dataFormat"
-                [dataSource]="dataSourceColumnChart2.dataSource">
-              </fusioncharts>
-        </div>
-      </div>
 
 </div>
-
-
-
-<body>
-  <div class="container">
-    <div class="row">
-
-      <div class="col s12">
-
-    <!--.Acá va el grafico de los organismos..-->
-    <p>
-      The two more populated families the AB hydrolase superfamily Lipase and the 4-oxalocrotonate tautomerase family.
-    </p>
-    <!--.Acá va el grafico de las familias..-->
-
-      </div>
-
-      </div>
-    </div>
-  </body>

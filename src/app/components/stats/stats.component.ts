@@ -26,32 +26,57 @@ export class StatsComponent implements OnInit {
           "baseFont": "Verdana",
           "baseFontSize": "14",
           "palettecolors":"#ff5252",
-          "caption": "BarChart 1",
-          "subCaption": "Top 5 stores in last month by revenue",
-          "numberprefix": "$",
+          "caption": "Organisms frequences",
+          "subCaption": "Representation of organisms",
+          "numberprefix": "",
+          "showValues": "0",
+          "numberScaleUnit": "",
           "theme": "fint"
         },
         "data": [
-            {
-                "label": "Bakersfield Central",
-                "value": "880000"
-            },
-            {
-                "label": "Garden Groove harbour",
-                "value": "730000",
-            },
-            {
-                "label": "Los Angeles Topanga",
-                "value": "590000"
-            },
-            {
-                "label": "Compton-Rancho Dom",
-                "value": "520000"
-            },
-            {
-                "label": "Daly City Serramonte",
-                "value": "330000"
-            }
+          {"label": "Streptomyces coelicolor","value": "1.05"},
+          {"label": "Hevea brasiliensis","value": "1.05"},
+          {"label": "Burkholderia cepacia","value": "2.10"},
+          {"label": "Sulfolobus solfataricus","value": "1.05"},
+          {"label": "Penicillium citrinum","value": "1.05"},
+          {"label": "Amycolatopsis sp.","value": "1.05"},
+          {"label": "Pseudomonas putida","value": "2.10"},
+          {"label": "Thermomyces lanuginosus (Humicola lanuginosa)","value": "2.10"},
+          {"label": "Pseudomonas putida (Arthrobacter siderocapsulatus)","value": "6.31"},
+          {"label": "Rhodococcus erythropolis (Arthrobacter picolinophilus)","value": "1.05"},
+          {"label": "Neosartorya fumigata","value": "3.15"},
+          {"label": "Rhizopus delemar","value": "2.10"},
+          {"label": "Ficus carica","value": "1.05"},
+          {"label": "Escherichia coli (strain K12)","value": "1.05"},
+          {"label": "Pseudozyma antarctica (Candida antarctica)","value": "4.21"},
+          {"label": "Bacillus licheniformis","value": "3.15789473684"},
+          {"label": "Burkholderia glumae (Pseudomonas glumae)","value": "1.05"},
+          {"label": "Pseudomonas chlororaphis","value": "1.05"},
+          {"label": "Homo sapiens (Human)","value": "5.26"},
+          {"label": "Methylomonas aminofaciens","value": "1.05"},
+          {"label": "Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)","value": "1.05"},
+          {"label": "Aspergillus usamii","value": "1.05"},
+          {"label": "Gallus gallus (Chicken)","value": "1.05"},
+          {"label": "Thermomyces lanuginosa","value": "1.05"},
+          {"label": "Acinetobacter johnsonii","value": "1.05"},
+          {"label": "Brevundimonas diminuta (Pseudomonas diminuta)","value": "2.10"},
+          {"label": "Rhizopus niveus","value": "2.10526315789"},
+          {"label": "Bos taurus (Bovine)","color": "#bdbdbd","value": "10.5"},
+          {"label": "Pseudomonas aeruginosa","value": "1.05"},
+          {"label": "Citrobacter freundii","value": "1.05"},
+          {"label": "Aspergillus niger","value": "2.10"},
+          {"label": "Carica papaya (Papaya)","value": "1.05"},
+          {"label": "Arthrobacter sp.","value": "1.05"},
+          {"label": "Thermomyces lanuginosus","value": "1.05"},
+          {"label": "Bacillus subtilis","value": "2.10"},
+          {"label": "Escherichia coli","value": "8.42"},
+          {"label": "Macrophoma commelinae","value": "2.10"},
+          {"label": "Sus scrofa (Pig)","color": "#bdbdbd","value": "10.5"},
+          {"label": "Pseudomonas fluorescens","value": "1.05"},
+          {"label": "Human","value": "3.15"},
+          {"label": "Microbacterium hydrocarbonoxydans","value": "1.05"},
+          {"label": "Rhizomucor miehei","value": "1.05263157895"},
+          {"label": "Pseudozyma antarctica (Yeast) (Candida antarctica)","value": "1.052"}
         ]
       }
     }
@@ -66,34 +91,119 @@ export class StatsComponent implements OnInit {
         "chart":
         {
           "baseFont": "Verdana",
+          "labelDisplay": "rotate",
+          "showValues": "0",
           "baseFontSize": "14",
           "palettecolors":"#ff5252",
-          "caption": "barchat2",
-          "subCaption": "Top 5 stores in last month by revenue",
-          "numberprefix": "$",
+          "caption": "Protein families frequences",
+          "subCaption": "Representation of proteins families",
+          "numberprefix": "",
+          "numberScaleUnit": "",
           "theme": "fint"
         },
         "data": [
-            {
-                "label": "Bakersfield Central",
-                "value": "880000"
-            },
-            {
-                "label": "Garden Groove harbour",
-                "value": "730000"
-            },
-            {
-                "label": "Los Angeles Topanga",
-                "value": "590000"
-            },
-            {
-                "label": "Compton-Rancho Dom",
-                "value": "520000"
-            },
-            {
-                "label": "Daly City Serramonte",
-                "value": "330000"
-            }
+          {
+              "label": "AB hydrolase superfamily",
+              "color": "#bdbdbd",
+              "value": "9.80"
+          },
+          {
+              "label": "Glycosyl hydrolase 22 family",
+              "value": "1.96"
+          },
+          {
+              "label": "Paraoxonase family",
+              "value": "1.96"
+          },
+          {
+              "label": "Phosphotriesterase family",
+              "value": "1.96"
+          },
+          {
+              "label": "Peptidase M20A family DapE subfamily",
+              "value": "1.96"
+          },
+          {
+              "label": "Tryptophan dimethylallyltransferase",
+              "value": "5.88"
+          },
+          {
+              "label": "Glycosyl hydrolase 15",
+              "value": "1.96"
+          },
+          {
+              "label": "Alpha-carbonic anhydrase",
+              "value": "1.96"
+          },
+          {
+              "label": "Glycosyl hydrolase 13",
+              "value": "3.96"
+          },
+          {
+              "label": "Sulfatase",
+              "value": "1.96"
+          },
+          {
+              "label": "Trans-sulfuration enzymes",
+              "value": "1.96"
+          },
+          {
+              "label": "ALB/AFP/VDB",
+              "value": "3.96"
+          },
+          {
+              "label": "HPS/KGPDC family HPS",
+              "value": "1.96"
+          },
+          {
+              "label": "'GDSL' lipolytic enzyme",
+              "value": "1.96"
+          },
+          {
+              "label": "'Globin",
+              "value": "3.96"
+          },
+          {
+              "label": "4-oxalocrotonate tautomerase",
+              "color": "#bdbdbd",
+              "value": "7.80"
+          },
+          {
+              "label": "HPS/KGPDC family KGPDC",
+              "value": "1.96"
+          },
+          {
+              "label": "Peptidase A1",
+              "value": "1.96"
+          },
+          {
+              "label": "AB hydrolase",
+              "value": "3.96"
+          },
+          {
+              "label": "Peptidase S8",
+              "value": "5.88"
+          },
+          {
+              "label": "Peptidase S1",
+              "value": "3.96"
+          },
+          {
+              "label": "Peptidase C1",
+              "value": "5.88"
+          },
+          {
+              "label": "Nuclease type I",
+              "value": "1.96"
+          },
+          {
+              "label": "Mandelate racemase/muconate lactonizing",
+              "value": "3.96"
+          },
+          {
+              "label": "Metallo-dependent hydrolase",
+              "value": "3.96"
+          }
         ]
       }
     }
