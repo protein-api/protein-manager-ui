@@ -34,6 +34,6 @@ export class ReactionCardComponent implements OnInit {
 
   cineticType = (type) => (type === "REACTIVO" ? "Reactive" : "Product")
 
-  getNameWithoutSpaces = () => this.reaction.descripcion.replace( /\s/g, "")
+  getNameOnlyLetters = () => this.reaction.descripcion.replace(/[^a-zA-Z]+/g, '');
 
 }

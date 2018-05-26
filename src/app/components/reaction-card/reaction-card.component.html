@@ -36,14 +36,14 @@
         <p>Molecules:</p>
         <div class="row">
           <div class="col s12">
-            <ul class="tabs" id="tab{{getNameWithoutSpaces()}}">
+            <ul class="tabs" id="tab{{getNameOnlyLetters()}}">
               <li class="tab col s1"></li>
-              <li class="tab col s5" [class.disabled]="!hasMolecules('REACTIVO')"><a class="active" href="#reactive{{getNameWithoutSpaces()}}">substrates ({{amountOfMolecules('REACTIVO')}})</a></li>
-              <li class="tab col s5" [class.disabled]="!hasMolecules('PRODUCTO')"><a href="#product{{getNameWithoutSpaces()}}">products ({{amountOfMolecules('PRODUCTO')}})</a></li>
+              <li class="tab col s5" [class.disabled]="!hasMolecules('REACTIVO')"><a class="active" href="#reactive{{getNameOnlyLetters()}}">substrates ({{amountOfMolecules('REACTIVO')}})</a></li>
+              <li class="tab col s5" [class.disabled]="!hasMolecules('PRODUCTO')"><a href="#product{{getNameOnlyLetters()}}">products ({{amountOfMolecules('PRODUCTO')}})</a></li>
               <li class="tab col s1"></li>
             </ul>
           </div>
-          <div id="reactive{{getNameWithoutSpaces()}}" class="col s12" *ngIf="hasMolecules('REACTIVO')">
+          <div id="reactive{{getNameOnlyLetters()}}" class="col s12" *ngIf="hasMolecules('REACTIVO')">
               <br>
               <table class="striped">
                 <thead>
@@ -70,7 +70,7 @@
                 </tbody>
               </table>
           </div>
-          <div id="product{{getNameWithoutSpaces()}}" class="col s12" *ngIf="hasMolecules('PRODUCTO')">
+          <div id="product{{getNameOnlyLetters()}}" class="col s12" *ngIf="hasMolecules('PRODUCTO')">
                 <br>
                 <table class="striped">
                   <thead>

@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col s12">
     <ul class="tabs">
-      <li class="tab col s3"><a class="active" href="#test1">doi</a></li>
-      <li class="tab col s3"><a href="#test2">molec func</a></li>
-      <li class="tab col s3"><a href="#test3">codnas</a></li>
-      <li class="tab col s3"><a href="#test4">pfam</a></li>
+      <li class="tab col s3" [class.disabled]="!hasLinks('doi')"><a class="active" href="#test1">doi ({{getAmountLinks('doi')}})</a></li>
+      <li class="tab col s3" [class.disabled]="!hasLinks('molec_func')"><a href="#test2">molec func ({{getAmountLinks('molec_func')}})</a></li>
+      <li class="tab col s3" [class.disabled]="!hasLinks('codnas')"><a href="#test3">codnas ({{getAmountLinks('codnas')}})</a></li>
+      <li class="tab col s3" [class.disabled]="!hasLinks('pfam')"><a href="#test4">pfam ({{getAmountLinks('pfam')}})</a></li>
     </ul>
   </div>
   <div id="test1" class="col s12">
