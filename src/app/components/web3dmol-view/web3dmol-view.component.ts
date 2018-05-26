@@ -4,7 +4,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl, SafeHtml } from '@angular/platf
 import { ProteinDataService } from "../../service/protein.data.srv"
 import { Protein } from "../model/model"
 
-declare const w3m:any
+//declare const w3m:any
 
 @Component({
   selector: 'app-web3dmol-view',
@@ -26,7 +26,7 @@ export class Web3DMolViewComponent {
 
   ngOnInit() {
     console.log(this.uniprot)
-    console.log(w3m)
+    //console.log(w3m)
     let url = `http://web3dmol.duapp.com/?id=${this.structure}`
     this.url = this.sanitizer.bypassSecurityTrustResourceUrl(url)
     //this.loadWeb3dMol(this.uniprot)

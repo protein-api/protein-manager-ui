@@ -1,8 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { ProteinDataService } from "../../service/protein.data.srv";
-
-declare const $:any;
+import { Component, OnInit } from "@angular/core"
+import { FormGroup, FormControl } from '@angular/forms'
+import { Router } from "@angular/router"
+import { ProteinDataService } from "../../service/protein.data.srv"
 
 @Component({
     selector:'search-component',
@@ -11,14 +10,20 @@ declare const $:any;
 
 })
 
-export class SearchComponent implements OnInit{
+export class SearchComponent implements OnInit {
 
-  constructor(private router:Router, private proteinDataService:ProteinDataService){}
+  constructor(private router:Router, private proteinDataService:ProteinDataService){
+  }
 
-  textSearch: string;
+  textSearch: string
+  selectedSearch:string = 'PROTEIN'
 
   ngOnInit() {
-    $('select').material_select()
+  }
+
+  selectChangeHandler(searchType:any) {
+    console.log(event)
+    this.selectedSearch = searchType
   }
 
   backClick(){}
@@ -30,9 +35,29 @@ export class SearchComponent implements OnInit{
   }
 
   search = () => {
-    if(this.textSearch) {
-      this.router.navigate(['/proteins']);
-      this.proteinDataService.search(this.textSearch);
+    if(this.textSearch && this.selectedSearch) {
+      this.router.navigate(['/proteins'])
+      if(this.selectedSearch === 'PROTEIN') {
+        //search by protein
+        console.log("search by protein")
+        this.proteinDataService.search(this.textSearch)
+      } else if(this.selectedSearch === 'REACTION') {
+        //search by reaction
+        this.proteinDataService.searchByReaction(this.textSearch)
+      } else {
+        //search by organism
+        this.proteinDataService.searchByOrganism(this.textSearch)
+      }
+      
     }
   }
+
+  onChangeSelect = ($event) => {
+    console.log($event)
+  }
+
+  selectChange($event) {
+    console.log($event)
+  }
+  
 }

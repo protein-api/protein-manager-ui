@@ -2,6 +2,22 @@
   width: 100% ;
 }
 
+.dropdown-content li > span {
+  font-size: 16px;
+  color: red !important;
+  display: block;
+  line-height: 22px;
+  padding: 14px 16px;
+}
+
+ul.dropdown-content.select-dropdown li:not(.disabled) span { 
+  color: #EF5350 !important;
+}
+
+.redLight {
+  background-color: #EF5350 !important;
+}
+
 
 .search-form{
   background: #fff;
