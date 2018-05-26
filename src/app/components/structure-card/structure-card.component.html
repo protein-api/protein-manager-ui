@@ -22,22 +22,25 @@
       </div>
     </div>
     <div class="divider"></div>
-    <div id="viewer-{{structure}}" class="container"></div>
+
+    <app-web3dmol-view [uniprot]='uniprot' [structure]='getStructureName(structure)'></app-web3dmol-view>
+
+    <!-- <div id="viewer-{{structure}}" class="container"></div>
     <div>
       <a class="btn-floating btn waves-effect waves-light" (click)="autoZoom()" title="Center"><i class="material-icons">center_focus_strong</i></a>
       
-      <a class="btn-floating btn waves-effect waves-light" (click)="rotate()" title="Rotate"><i class="material-icons">rotate_right</i></a>
+      <a class="btn-floating btn waves-effect waves-light" (click)="rotate()" title="Rotate"><i class="material-icons">rotate_right</i></a> -->
 
       <!-- Dropdown Trigger -->
-      <a materialize="dropdown" class='dropdown-button btn' data-activates='dropdown1'><i class="material-icons right">arrow_drop_down</i>Style</a>
+      <!-- <a materialize="dropdown" class='dropdown-button btn' data-activates='dropdown1'><i class="material-icons right">arrow_drop_down</i>Style</a> -->
       <!-- Dropdown Structure -->
-      <ul id='dropdown1' class='dropdown-content'>
+      <!-- <ul id='dropdown1' class='dropdown-content'>
         <li (click)="lines()"><a>Lines</a></li>
         <li (click)="cartoon()"><a>Cartoon</a></li>
         <li (click)="lineTrace()"><a>Line Trace</a></li>
         <li (click)="tube()"><a>Tube</a></li>
         <li (click)="trace()"><a>Trace</a></li>
-      </ul>
+      </ul> -->
       
     </div>
     <br>

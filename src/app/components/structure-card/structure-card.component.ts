@@ -13,8 +13,9 @@ declare const pv:any
 })
 export class StructureCardComponent implements OnInit {
 
-  @Input() structure: any;
-  private structureLink: string;
+  @Input() structure: any
+  @Input() uniprot: any
+  private structureLink: string
   private viewer:any
   private pvStructure:any
 
@@ -25,11 +26,9 @@ export class StructureCardComponent implements OnInit {
     this.structureLink = this.getSructureLink(this.structure)
   }
 
-  getSructureLink = (structure) => {
-    const link = "https://www.rcsb.org/pdb/explore/explore.do?structureId="
-    const struc = structure.includes("_") ? structure.substring(0, structure.length - 2) : structure
-    return link + struc
-  }
+  getSructureLink = (structure) => ("https://www.rcsb.org/pdb/explore/explore.do?structureId=" + this.getStructureName(structure))
+
+  getStructureName = (structure) => (structure.includes("_") ? structure.substring(0, structure.length - 2) : structure)
 
   openReactionModal = () => {
     $('#modal-structure-' + this.structure).modal('open')
@@ -40,9 +39,9 @@ export class StructureCardComponent implements OnInit {
       antialias: true,
       quality : 'medium'
     }
-    $('#viewer-'+this.structure).empty();
-    this.viewer = pv.Viewer(document.getElementById('viewer-'+this.structure), options)
-    this.loadPdb("1r6a")
+    //$('#viewer-'+this.structure).empty();
+    //this.viewer = pv.Viewer(document.getElementById('viewer-'+this.structure), options)
+    //this.loadPdb("1r6a")
   }
 
   closeReactionModal = () => $('#modal-structure-' + this.structure).modal('close')

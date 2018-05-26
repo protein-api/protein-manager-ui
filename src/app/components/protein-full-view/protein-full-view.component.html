@@ -53,7 +53,7 @@
 
         <div class="row" >
           <div *ngFor="let structure of structures">
-            <app-structure-card [structure]="structure"></app-structure-card>
+            <app-structure-card [structure]="structure" [uniprot]="protein.codigoUniProt"></app-structure-card>
           </div>
         </div>
 

@@ -40,6 +40,7 @@ import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { FusionChartsModule } from 'angular4-fusioncharts';
+import { Web3DMolViewComponent } from "./components/web3dmol-view/web3dmol-view.component";
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
@@ -74,7 +75,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     SequenceViewComponent,
     ProVizViewComponent,
     FactsComponent,
-    MoleculesTableComponent
+    MoleculesTableComponent,
+    Web3DMolViewComponent
   ],
   imports: [
     FormsModule,
