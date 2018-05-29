@@ -23,8 +23,21 @@
     </div>
     <div class="divider"></div>
 
-    <app-web3dmol-view [uniprot]='uniprot' [structure]='getStructureName(structure)'></app-web3dmol-view>
 
+    
+    <div class="container">
+      <div id="3dmol-{{structure}}"></div>
+    </div>
+    
+
+    <!-- <app-web3dmol-view [uniprot]='uniprot' [structure]='getStructureName(structure)'></app-web3dmol-view> -->
+
+    <div id="3dmol_{{structure}}">
+        <div [innerHTML]="dmol"></div>
+    </div>
+    
+    
+    <div id="viewer-{{structure}}" class="container"></div>
     <!-- <div id="viewer-{{structure}}" class="container"></div>
     <div>
       <a class="btn-floating btn waves-effect waves-light" (click)="autoZoom()" title="Center"><i class="material-icons">center_focus_strong</i></a>

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core'
-import {MaterializeDirective} from "angular2-materialize"
+import {MaterializeDirective } from "angular2-materialize"
+
+import { DomSanitizer, SafeResourceUrl, SafeUrl, SafeHtml } from '@angular/platform-browser'
 
 declare const jQuery:any
 declare const $:any
@@ -15,11 +17,14 @@ export class StructureCardComponent implements OnInit {
 
   @Input() structure: any
   @Input() uniprot: any
+  @Input() sitesActives: any
   private structureLink: string
   private viewer:any
   private pvStructure:any
+  private dmolUrl: SafeResourceUrl
+  private dmol: SafeHtml
 
-  constructor() {}
+  constructor(private sanitizer: DomSanitizer,) {}
 
   ngOnInit() {
     $('.modal').modal()
@@ -30,7 +35,21 @@ export class StructureCardComponent implements OnInit {
 
   getStructureName = (structure) => (structure.includes("_") ? structure.substring(0, structure.length - 2) : structure)
 
+  getChain = (structure) => (structure.includes("_") ? structure.substring(structure.length - 1) : '')
+
+  getListStringSitesActives = (sitesActives) => {
+    let can = sitesActives.sitiosActCan.split(', ')
+    let prot = sitesActives.sitiosActProm.split(', ')
+    /* console.log(can)
+    console.log(prot)
+    console.log(Array.from(new Set(can.concat(prot))))
+    console.log(Array.from(new Set(can.concat(prot))).join()) */
+    
+    return Array.from(new Set(can.concat(prot))).join()
+  }
+
   openReactionModal = () => {
+    this.load3dmol()
     $('#modal-structure-' + this.structure).modal('open')
 
     const options = {
@@ -45,6 +64,16 @@ export class StructureCardComponent implements OnInit {
   }
 
   closeReactionModal = () => $('#modal-structure-' + this.structure).modal('close')
+
+  load3dmol = () => {
+    console.log(this.getListStringSitesActives(this.sitesActives))
+    console.log(this.getChain(this.structure))
+    let url = `http://3Dmol.csb.pitt.edu/viewer.html?pdb=${this.getStructureName(this.structure)}&select=resi:${this.getListStringSitesActives(this.sitesActives)};chain:${this.getChain(this.structure)}&labelres=backgroundOpacity:0.8;fontSize:14`
+    console.log(url)
+    let html = `<embed width="100%" height="600px" src="${url}" />`
+    this.dmolUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url)
+    this.dmol = this.sanitizer.bypassSecurityTrustHtml(html)
+  }
 
   loadPdb = (pdbName) => {
     pv.io.fetchPdb('/assets/pv/pdbs/' + pdbName + '.pdb', (structure) => {
