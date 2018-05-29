@@ -41,6 +41,7 @@ import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { FusionChartsModule } from 'angular4-fusioncharts';
 import { Web3DMolViewComponent } from "./components/web3dmol-view/web3dmol-view.component";
+import { SearchHelperService } from "./service/search.helper.srv";
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
@@ -91,6 +92,7 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
   providers: [
     ErrorNotifierService,
     ProteinDataService,
+    SearchHelperService,
     EnvironmentService,
     {
       provide: RequestOptions, useClass: Configuration

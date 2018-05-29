@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core"
 import { FormGroup, FormControl } from '@angular/forms'
 import { Router } from "@angular/router"
 import { ProteinDataService } from "../../service/protein.data.srv"
+import { SearchHelperService } from "../../service/search.helper.srv";
 
 @Component({
     selector:'search-component',
@@ -12,17 +13,21 @@ import { ProteinDataService } from "../../service/protein.data.srv"
 
 export class SearchComponent implements OnInit {
 
-  constructor(private router:Router, private proteinDataService:ProteinDataService){
+  constructor(private router:Router, private proteinDataService:ProteinDataService, private searchHelper:SearchHelperService) {
   }
 
   textSearch: string
   selectedSearch:string = 'PROTEIN'
 
   ngOnInit() {
+    if(this.searchHelper.getSearchs().length === 1) {
+        let lastSearch = this.searchHelper.getSearchs().slice(-1)[0]
+        this.textSearch = lastSearch.searchText
+        this.selectedSearch = lastSearch.searchType
+    }
   }
 
   selectChangeHandler(searchType:any) {
-    console.log(event)
     this.selectedSearch = searchType
   }
 
@@ -36,6 +41,7 @@ export class SearchComponent implements OnInit {
 
   search = () => {
     if(this.textSearch && this.selectedSearch) {
+      this.searchHelper.addSearch({searchType:this.selectedSearch, searchText:this.textSearch, goBack:false})
       this.router.navigate(['/proteins'])
       if(this.selectedSearch === 'PROTEIN') {
         //search by protein

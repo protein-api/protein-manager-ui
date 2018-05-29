@@ -4,7 +4,7 @@ import { Observable } from 'rxjs'
 import { Subject } from 'rxjs/Subject'
 
 @Injectable()
-export class ProteinDataService{
+export class ProteinDataService {
 
   private subject = new Subject<any>()
   private proteinSubject = new Subject<any>()
