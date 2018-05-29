@@ -42,6 +42,8 @@ import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { FusionChartsModule } from 'angular4-fusioncharts';
 import { Web3DMolViewComponent } from "./components/web3dmol-view/web3dmol-view.component";
 import { SearchHelperService } from "./service/search.helper.srv";
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
+
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
@@ -87,7 +89,8 @@ export function useFactory(backend: XHRBackend, defaultOptions: RequestOptions, 
     AppRoutingModule,
     HttpModule,
     MaterializeModule,
-    FusionChartsModule
+    FusionChartsModule,
+    Angular2FontawesomeModule
   ],
   providers: [
     ErrorNotifierService,
