@@ -40,14 +40,6 @@ export class StructureCardComponent implements OnInit {
   getListStringSitesActives = (sitesActives) => {
     let can = sitesActives.sitiosActCan.split(', ')
     let prot = sitesActives.sitiosActProm.split(', ')
-    /* console.log(can)
-    console.log(prot)
-    console.log(Array.from(new Set(can.concat(prot))))
-    console.log(Array.from(new Set(can.concat(prot))).join()) */
-    
-    /* console.log(sitesActives.sitiosActCan)
-    console.log(sitesActives.sitiosActProm) */
-
     return Array.from(new Set(can.concat(prot))).join()
   }
 
@@ -55,12 +47,12 @@ export class StructureCardComponent implements OnInit {
     this.load3dmol()
     $('#modal-structure-' + this.structure).modal('open')
 
-    const options = {
+    /* const options = {
       width: 600,
       height: 600,
       antialias: true,
       quality : 'medium'
-    }
+    } */
     //$('#viewer-'+this.structure).empty();
     //this.viewer = pv.Viewer(document.getElementById('viewer-'+this.structure), options)
     //this.loadPdb("1r6a")
@@ -71,10 +63,7 @@ export class StructureCardComponent implements OnInit {
   load3dmol = () => {
     let can = this.sitesActives.sitiosActCan != '' ? `&select=resi:${this.sitesActives.sitiosActCan.replace(/\s/g, "")};chain:${this.getChain(this.structure)}&labelres=backgroundOpacity:0.8;backgroundColor:red;fontSize:14` : ''
     let prom = this.sitesActives.sitiosActProm != '' ? `&select=resi:${this.sitesActives.sitiosActProm.replace(/\s/g, "")};chain:${this.getChain(this.structure)}&labelres=backgroundOpacity:0.8;backgroundColor:blue;fontSize:16` : ''
-    console.log(can)
-    console.log(prom)
     let url = `http://3Dmol.csb.pitt.edu/viewer.html?pdb=${this.getStructureName(this.structure)}&style=cartoon:color~spectrum${can}${prom}`
-    console.log(url)
     let html = `<embed width="100%" height="600px" src="${url}" />`
     this.dmolUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url)
     this.dmol = this.sanitizer.bypassSecurityTrustHtml(html)

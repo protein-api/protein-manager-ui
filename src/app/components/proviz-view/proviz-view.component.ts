@@ -26,7 +26,7 @@ export class ProVizViewComponent {
   }
 
   loadProViz = () => {
-    let url = `http://proviz.ucd.ie/proviz.php?uniprot_acc=${this.protein.codigoUniProt}`
+    let url = `http://proviz.ucd.ie/proviz.php?uniprot_acc=${this.protein.codigoUniProt}&collapse=conservation,motif,elm,modification,phospho,mutagenesis,homology,splice_variant,SNP,chain,cross_link,iupred,switch,motif,modification,mutation,isoform,snp,anchor,peptide&tools=promiscuity`
     let html = `<embed width="100%" height="600px" src="${url}" />`
     this.url = this.sanitizer.bypassSecurityTrustResourceUrl(url)
     this.proviz = this.sanitizer.bypassSecurityTrustHtml(html)
